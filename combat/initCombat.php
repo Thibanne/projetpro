@@ -39,5 +39,43 @@ if( $_POST['combat']=='Gobelin'){
       'cout' => ['mana' => -5]
     ]
   ];
+}else if($_POST['combat']=='Hobgobelin'){
+  $_SESSION['battleIn']=true;
+  $_SESSION['avec']=$_POST['combat'];
+  $_SESSION['monstre'] = [
+    'PV' => 75,
+    'mana' => 20
+  ];
+  $_SESSION['techMonstre'] = [
+    'Attaque' => [
+      'degats' => ['PV' => -5],
+      'cout' => ['mana' => 0]
+    ],
+    'Coup bas' => [
+      'degats' => ['PV' => -30],
+      'cout' => ['mana' => -10]
+    ]
+  ];
+}else if($_POST['combat']=='Ogre'){
+  $_SESSION['battleIn']=true;
+  $_SESSION['avec']=$_POST['combat'];
+  $_SESSION['monstre'] = [
+    'PV' => 150,
+    'mana' => 10
+  ];
+  $_SESSION['techMonstre'] = [
+    'Attaque' => [
+      'degats' => ['PV' => -15],
+      'cout' => ['mana' => 0]
+    ],
+    'Martellage' => [
+      'degats' => ['PV' => -30],
+      'cout' => ['mana' => -10]
+    ],
+    'Plaquage' => [
+      'degats' => ['PV' => -25],
+      'cout' => ['mana' => -10]
+    ]
+  ];
 }
  ?>

@@ -1,5 +1,5 @@
 <!-- formulaire de connection -->
-  <form class="" action="" method="post">
+  <form class="" action="?page" method="post">
     <div class="">
       <label for="">Pseudo</label>
       <input type="text" name="login" value="" />

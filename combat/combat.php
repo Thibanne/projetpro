@@ -1,6 +1,6 @@
-<?php session_start();
-require '../techniques.php';
-require '../fonction.php';
+<?php
+require 'techniques.php';
+require 'fonction.php';
 if(isset($_POST['combat'])){
   require 'initCombat.php';
 }

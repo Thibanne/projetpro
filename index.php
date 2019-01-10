@@ -32,9 +32,13 @@
   <?php
   // j'affiche la page de session si connecté
   if(isset($_SESSION['pseudo'])){
-    echo 'Vous êtes connecté';
-    require 'logout.php';
-    require 'liste_monstre.php';
+    if(isset($_GET['page'])){
+      require 'combat/combat.php';
+    }else{
+      echo 'Vous êtes connecté';
+      require 'logout.php';
+      require 'liste_monstre.php';
+    }
   // sinon j'affiche  un formulaire de connection
   } else {
     require 'form.php';

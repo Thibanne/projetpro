@@ -3,16 +3,21 @@
   <div class="">
     <input type="submit" name="skill" value="Attaque" />
   </div>
-  <div class="">
-    <input type="submit" name="skill" value="Coup fort" />
-  </div>
-  <div class="">
-    <input type="submit" name="skill" value="Coup assomant" />
-  </div>
-  <div class="">
-    <input type="submit" name="skill" value="Boule de feu" />
-  </div>
-  <div class="">
-    <input type="submit" name="skill" value="Soin" />
-  </div>
+  <?php
+  foreach ($techJoueur as $key => $value) {
+    if(abs($value['cout']['mana']) <= $_SESSION['joueur']['mana']){
+      ?>
+      <div class="">
+        <input type="submit" name="skill" value="<?= $key ?>" />
+      </div>
+      <?php
+    }else{
+      ?>
+      <div class="">
+        <input type="submit" name="skill" value="<?= $key ?>" disabled />
+      </div>
+      <?php
+    }
+  }
+  ?>
 </form>

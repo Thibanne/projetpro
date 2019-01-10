@@ -1,5 +1,19 @@
 <?php
-$skill=array_keys($_SESSION['techMonstre']);
+// Condition pour savoir si le monstre a suffisament de mana pour utiliser un pouvoir
+
+  $copie = [];
+  foreach ($_SESSION['techMonstre'] as $key => $value) {
+    if(abs($value['cout']['mana']) <= $_SESSION['monstre']['mana']){
+      $copie[] = $key;
+    }
+  }
+  $skill=$copie;
+  // ?><pre><?php
+  // print_r($skill);
+  // ?></pre><?php
+
+  // $skill=array_keys($_SESSION['techMonstre']);
+
 shuffle($skill);
 $degat=$_SESSION['techMonstre'][$skill[0]]['degats']['PV'];
 $cout=$_SESSION['techMonstre'][$skill[0]]['cout']['mana'];
@@ -9,7 +23,6 @@ $cout=$_SESSION['techMonstre'][$skill[0]]['cout']['mana'];
 if($skill[0]=='Attaque'){
   // la fonction fait que les PV du joueur sont retiré de l'attaque du monstre
   $_SESSION['joueur']['PV']+=$degat;
-  $_SESSION['monstre']['mana']+=$cout;
   jdc($_SESSION['avec'].' vous a attaqué et vous avez subit '.abs($degat).' dégats');
 // s'il fait un soin
 }else if($skill[0]=='Soin'){
@@ -26,4 +39,4 @@ if($skill[0]=='Attaque'){
   // la fonction fait que les PV du joueur sont retiré de la valeur de la $technique aléatoire
   jdc($_SESSION['avec'].' vous a attaqué avec '.$skill[0].' et vous avez subit '.abs($degat).' dégats');
 }
- ?>
+?>
