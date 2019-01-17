@@ -10,7 +10,8 @@ if( $_POST['combat']=='Gobelin'){
   // je mémorise les statistiques du monstre en question
   $_SESSION['monstre'] = [
     'PV' => 50,
-    'mana' => 0
+    'mana' => 0,
+    'stun' => 0
   ];
   $_SESSION['techMonstre'] = [
     'Attaque' => [
@@ -23,7 +24,8 @@ if( $_POST['combat']=='Gobelin'){
   $_SESSION['avec']=$_POST['combat'];
   $_SESSION['monstre'] = [
     'PV' => 75,
-    'mana' => 20
+    'mana' => 20,
+    'stun' => 0
   ];
   $_SESSION['techMonstre'] = [
     'Attaque' => [
@@ -44,7 +46,8 @@ if( $_POST['combat']=='Gobelin'){
   $_SESSION['avec']=$_POST['combat'];
   $_SESSION['monstre'] = [
     'PV' => 75,
-    'mana' => 20
+    'mana' => 20,
+    'stun' => 0
   ];
   $_SESSION['techMonstre'] = [
     'Attaque' => [
@@ -61,7 +64,8 @@ if( $_POST['combat']=='Gobelin'){
   $_SESSION['avec']=$_POST['combat'];
   $_SESSION['monstre'] = [
     'PV' => 150,
-    'mana' => 10
+    'mana' => 10,
+    'stun' => 0
   ];
   $_SESSION['techMonstre'] = [
     'Attaque' => [
@@ -73,7 +77,42 @@ if( $_POST['combat']=='Gobelin'){
       'cout' => ['mana' => -10]
     ],
     'Plaquage' => [
-      'degats' => ['PV' => -25],
+      'degats' => [
+        'PV' => -25,
+        'stun' => 1
+      ],
+      'cout' => ['mana' => -10]
+    ]
+  ];
+}else if($_POST['combat']=='???'){
+  $_SESSION['battleIn']=true;
+  $_SESSION['avec']='Votre ombre';
+  $_SESSION['monstre'] = [
+    'PV' => 200,
+    'mana' => 100,
+    'stun' => 0
+  ];
+  $_SESSION['techMonstre'] = [
+    'Attaque' => [
+      'degats' => ['PV' => -10],
+      'cout' => ['mana' => 0]
+    ],
+    'Coup fort' => [
+      'degats' => ['PV' => -20],
+      'cout' => ['mana' => -10]
+    ],
+    'Coup assomant' => [
+      'degats' => [
+        'PV' => -10,
+        'stun' => 1
+      ]
+    ],
+    'Boule de feu' => [
+      'degats' => ['PV' => -30],
+      'cout' => ['mana' => -20]
+    ],
+    'Soin' => [
+      'degats' => ['PV' => 20],
       'cout' => ['mana' => -10]
     ]
   ];

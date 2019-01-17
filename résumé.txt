@@ -1,0 +1,3 @@
+Etant un grand joueur de Jeux de rôle que ce soit sur papier ou en jeux vidéo, j'ai eux cette idée de reproduire un jeux de rôle.
+Mon site consiste a faire des combats de joueur contre l'ordinateur
+(expliquer jdr)

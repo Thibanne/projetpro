@@ -1,8 +1,5 @@
 <!-- Liste des actions utilisable en combat -->
 <form class="" action="" method="post">
-  <div class="">
-    <input type="submit" name="skill" value="Attaque" />
-  </div>
   <?php
   foreach ($techJoueur as $key => $value) {
     if(abs($value['cout']['mana']) <= $_SESSION['joueur']['mana']){

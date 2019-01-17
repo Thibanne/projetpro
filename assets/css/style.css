@@ -1,0 +1,16 @@
+body {
+  background-image: url('../img/campfire.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+pre {
+  color: white;
+}
+hr {
+  height: unset;
+  border: 1px solid grey;
+}
+.error{
+  color: red;
+}
