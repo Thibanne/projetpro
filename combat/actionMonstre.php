@@ -29,7 +29,7 @@ if($skill[0]=='Attaque'){
   $_SESSION['joueur']['PV']+=$degat;
   $_SESSION['joueur']['stun']+=$_SESSION['techMonstre'][$skill[0]]['degats']['stun'];
   $_SESSION['monstre']['mana']+=$cout;
-  jdc($_SESSION['avec'].' vous a attaqué avec '.$skill[0].' et vous avez subit '.abs($degat).' de dégats et vous a assomé '.$_SESSION['avec'].' pendant '.$_SESSION['techMonstre'][$skill[0]]['degats']['stun'].' tour(s)');
+  jdc($_SESSION['avec'].' vous a attaqué avec '.$skill[0].' et vous avez subit '.abs($degat).' de dégats et vous a assomé pendant '.$_SESSION['techMonstre'][$skill[0]]['degats']['stun'].' tour(s)');
 }else{
   // J'affecte à la variable la valeur de la $technique aléatoire
   $_SESSION['joueur']['PV']+=$degat;

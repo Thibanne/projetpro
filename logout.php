@@ -1,4 +1,4 @@
 <!-- simple boutton envoyant l'info de deconection -->
-<form class="" action="" method="post">
-  <button type="submit" name="logout">Déconnexion</button>
-</form>
+<li class="nav-item active">
+  <a class="nav-link" href="/?logout">Déconnexion</a>
+</li>

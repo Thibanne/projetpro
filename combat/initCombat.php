@@ -105,7 +105,8 @@ if( $_POST['combat']=='Gobelin'){
       'degats' => [
         'PV' => -10,
         'stun' => 1
-      ]
+      ],
+      'cout' => ['mana' => -10]
     ],
     'Boule de feu' => [
       'degats' => ['PV' => -30],

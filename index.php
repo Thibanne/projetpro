@@ -1,10 +1,12 @@
 <?php session_start();
+require 'config.php';
 require 'fonction.php';
 // Avec session_start() je récupère les données enregistré dans une valeur ID unique, ou j'en génère une vide
 // je vérifie et je valide le formulaire de connection
 // S'il se deconnecte je vide la session
-if(isset($_POST['logout'])){
+if(isset($_GET['logout'])){
   $_SESSION = [];
+  header('Location: /');
 }
 ?>
 <!DOCTYPE html>
@@ -28,10 +30,22 @@ if(isset($_POST['logout'])){
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="/">Acceuil</a>
+              <a class="nav-link" href="/">Accueil</a>
             </li>
             <?php if(isConnected()){ ?>
               <!-- <li class="nav-item active"> -->
+              <li class="nav-item active">
+                <a class="nav-link" href="/?page=creer-monstre">Créer monstre</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/?page=creer-stats">Créer stats</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/?page=creer-technique">Créer technique</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/?page=listetech">liste tech</a>
+              </li>
                 <?php require 'logout.php'; ?>
               <!-- </li> -->
             <?php }else{ ?>
@@ -78,9 +92,20 @@ if(isset($_POST['logout'])){
       if(isset($_GET['page'])){
         if($_GET['page'] == 'combat'){
           require 'combat/combat.php';
+        }else if($_GET['page'] == 'creer-monstre'){
+          require 'formCreateMonstre.php';
+        }else if($_GET['page'] == 'creer-stats'){
+          require 'formCreateStats.php';
+        }else if($_GET['page'] == 'creer-technique'){
+          require 'formCreateTechnique.php';
+        }else if($_GET['page'] == 'listetech'){
+          require 'listetech.php';
+        }else if($_GET['page'] == 'cree-statsTech'){
+          require 'createStatsTech.php';
         }
       }else{
         require 'liste_monstre.php';
+        resetJoueur();
       }
     }else{
       ?> <p> Pas connecté </p> <?php
@@ -95,6 +120,9 @@ if(isset($_POST['logout'])){
       keyboard : false,
       backdrop : 'static'
     });
+    <?php if (isset($_GET['modal'])){ ?>
+      $('#connectModal').modal('show');
+    <?php } ?>
     </script>
 
   </body>

@@ -4,8 +4,9 @@
     foreach ($_POST as $key => $value) {
       $$key = $connect->real_escape_string($value);
     }
+    $password = password_hash($password.secretKey, PASSWORD_BCRYPT);
     $sql = "INSERT INTO Utilisateur
-            (`Nom`, `Prenom`, `Pseudo`, `MotDePasse`, `Mail`)
+            (`Nom`, `Prenom`, `Pseudo`, `Motdepasse`, `Mail`)
             VALUES ('$lastname', '$firstname', '$login', '$password', '$mail');";
     $result = $connect->query($sql);
     if ($result === false) {
