@@ -28,14 +28,14 @@
   <input type="hidden" name="id_technique" value="<?= $_GET['id'] ?>">
   <div class="">
     <label for="">Action</label>
-    <select class="" name="action">
+    <select class="btn btn-secondary" class="" name="action">
       <option value="degat">Dégât</option>
       <option value="cout">Coût</option>
     </select>
   </div>
   <div class="">
     <label for="">Stats</label>
-    <select class="" name="stats">
+    <select class="btn btn-secondary" class="" name="stats">
       <?php foreach ($tableStats as $key => $value){ ?>
           <option value="<?= $value['id'] ?>"><?= ucfirst($value['Nom']) ?></option>
       <?php } ?>
@@ -45,5 +45,5 @@
     <label for="">Valeur</label>
     <input type="number" id="valeur" name="valeur" maxlenghth="4" min="-9999" max="9999" onchange="(this.value<=9999 && this.value>=-9999) ? bouton.disabled=false : bouton.disabled=true;" onkeyup="if(this.value>9999){this.value=999}else if(this.value<-9999){this.value=-999}" required />
   </div>
-  <input type="submit" id="bouton" name="createStatsTech" value="Créé" disabled />
+  <input class="btn btn-secondary" type="submit" id="bouton" name="createStatsTech" value="Créé" disabled />
 </form>

@@ -20,5 +20,5 @@
       <label for="lastname"><strong>Nom : </strong></label></br>
       <input type="text" id="lastname" name="lastname" value="" />
   </div>
-  <button type="submit" name="createMonster">Créé</button>
+  <button class="btn btn-secondary" type="submit" name="createMonster">Créé</button>
 </form>

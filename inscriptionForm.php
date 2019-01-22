@@ -46,5 +46,5 @@ require 'regexform.php';
       <label for="mail"><strong>Confirmation de l'e-mail : </strong><?php if (isset($errorMail)) { ?> <span class="error"><?= $errorMail; ?></span><?php } ?></label></br>
       <input type="email" name="mailRepeat" value="<?= isset($mail) ? $mail : ''; ?>" />
   </div>
-  <button type="submit" name="inscription">Validé</button>
+  <button class="btn btn-light" type="submit" name="inscription">Validé</button>
 </form>

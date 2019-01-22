@@ -39,5 +39,5 @@ if (isset($_POST['connection'])) {
     <label for="">Mot de passe<?php if (isset($error['password'])) { ?> <span class="error"><?= $error['password']; ?></span><?php } ?></label>
     <input type="text" name="password" value="" />
   </div>
-  <button type="submit" name="connection">Connection</button>
+  <button class="btn btn-light" type="submit" name="connection">Connection</button>
 </form>

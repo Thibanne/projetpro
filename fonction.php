@@ -55,4 +55,16 @@ function isConnected(){
   return !empty($_SESSION['pseudo']);
 }
 
+function playerPVPercent(){
+  return (($_SESSION['joueur']['PV']/$_SESSION['basePVjoueur'])*100);
+}
+
+function playerManaPercent(){
+  return (($_SESSION['joueur']['mana']/$_SESSION['baseManajoueur'])*100);
+}
+
+function monsterPVPercent(){
+  return (($_SESSION['monstre']['PV']/$_SESSION['basePVmonstre'])*100);
+}
+
 ?>

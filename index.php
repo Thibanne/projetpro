@@ -17,13 +17,27 @@ if(isset($_GET['logout'])){
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <title>pasdenom</title>
+
+  <?php
+  if(isset($_GET['page'])){
+    if($_GET['page'] == 'combat'){
+      ?>
+        <link rel="stylesheet" href="assets/css/combat.css" />
+        <link rel="stylesheet" href="assets/css/stats.css" />
+      <?php
+      if(isset($_GET['votre-ombre'])){
+        ?><link rel="stylesheet" href="assets/css/ombre.css" /><?php
+      }
+    }
+  }
+   ?>
+  <title>GOHO?</title>
 </head>
 <body>
   <div class="container">
     <div class="row justify-content-between">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">napasdenom</a>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">GOHO?</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -76,7 +90,7 @@ if(isset($_GET['logout'])){
                         </div>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <button class="btn btn-light" type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
                       </div>
                     </div>
                   </div>
@@ -111,7 +125,7 @@ if(isset($_GET['logout'])){
       ?> <p> Pas connecté </p> <?php
     }
     ?>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery-3.3.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script>
@@ -123,6 +137,32 @@ if(isset($_GET['logout'])){
     <?php if (isset($_GET['modal'])){ ?>
       $('#connectModal').modal('show');
     <?php } ?>
+    </script>
+    <script>
+    <?php if($_SESSION['tour'] == 0){ ?>
+      $('.skillbar').each(function(){
+        $(this).find('.skillbar-bar').animate({
+          width:$(this).attr('data-percent')
+        },2000);
+      });
+    <?php
+    $_SESSION['tempPVJoueur'] = playerPVPercent();
+    $_SESSION['tempMana'] = playerManaPercent();
+    $_SESSION['tempPVMonstre'] = monsterPVPercent();
+    }else{ ?>
+      $('.skillbar').each(function(){
+        $(this).find('.playerPV').css("width", "<?= $_SESSION['tempPVJoueur'] ?>%")
+        $(this).find('.playerMana').css("width", "<?= $_SESSION['tempMana'] ?>%")
+        $(this).find('.monsterPV').css("width", "<?= $_SESSION['tempPVMonstre'] ?>%")
+        $(this).find('.skillbar-bar').animate({
+          width:$(this).attr('data-percent')
+        },1000);
+      });
+    <?php
+    $_SESSION['tempPVJoueur'] = playerPVPercent();
+    $_SESSION['tempMana'] = playerManaPercent();
+    $_SESSION['tempPVMonstre'] = monsterPVPercent();
+    } ?>
     </script>
 
   </body>

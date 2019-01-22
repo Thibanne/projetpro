@@ -118,4 +118,7 @@ if( $_POST['combat']=='Gobelin'){
     ]
   ];
 }
+$_SESSION['basePVjoueur'] = $_SESSION['joueur']['PV'];
+$_SESSION['baseManajoueur'] = $_SESSION['joueur']['mana'];
+$_SESSION['basePVmonstre'] = $_SESSION['monstre']['PV'];
  ?>
