@@ -7,7 +7,12 @@ if(abs($techJoueur[$_POST['skill']]['cout']['mana']) <= $_SESSION['joueur']['man
     // affichage des actions effectuer durant le tour du joueur
     jdc('Vous avez attaqué normalement et avez infligé '.abs($techJoueur[$_POST['skill']]['degats']['PV']).' dégats');
   }else if($_POST['skill']=='Soin'){
-    $_SESSION['joueur']['PV']+=$techJoueur['Soin']['degats']['PV'];
+    $lifePoint = $_SESSION['joueur']['PV']+$techJoueur['Soin']['degats']['PV'];
+    if($lifePoint>$_SESSION['basePVjoueur']){
+      $_SESSION['joueur']['PV']=$_SESSION['basePVjoueur'];
+    }else{
+      $_SESSION['joueur']['PV']+=$techJoueur['Soin']['degats']['PV'];
+    }
     $_SESSION['joueur']['mana']+=$techJoueur['Soin']['cout']['mana'];
     jdc('Vous avez utilisé soin et vous vous êtes soigné de '.abs($techJoueur['Soin']['degats']['PV']).' PV');
   }else if($_POST['skill']=='Coup assomant'){

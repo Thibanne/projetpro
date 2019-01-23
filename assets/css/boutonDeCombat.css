@@ -1,0 +1,26 @@
+.skillButton input, .skillButton a{
+  margin: 2px 0;
+  padding: 0.3rem;
+  width: 150px;
+  border: solid 2px #fff;
+  border-radius: 10px;
+  background-color: #30303080;
+  color: #FFF;
+  transition: all 0.3s ease-out;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+.skillButton input:hover, .skillButton a:hover{
+  background-color: #C90A0A99;
+  border: solid 2px black;
+  transform: scale(1.15);
+}
+.skillButton input:disabled{
+  background-color: #81818199;
+  border: solid 2px #242424;
+  color: #929292;
+}
+.skillButton input:hover:disabled{
+  transform: scale(1);
+}
