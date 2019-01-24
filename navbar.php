@@ -9,19 +9,22 @@
         <a class="nav-link" href="/">Accueil</a>
       </li>
       <?php if(isConnected()){ ?>
-        <li class="nav-item active">
-          <a class="nav-link" href="/?page=creer-monstre">Créer monstre</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="/?page=creer-stats">Créer stats</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="/?page=creer-technique">Créer technique</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="/?page=listetech">liste tech</a>
-        </li>
-          <?php require 'logout.php'; ?>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Liste création
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/?page=liste-monstre">monstre</a>
+          <a class="dropdown-item" href="/?page=creer-stats">stats</a>
+          <a class="dropdown-item" href="/?page=creer-technique">technique</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/?page=listetech">liste tech</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/?page=creer-techjoueur">technique pour un joueur</a>
+          <a class="dropdown-item" href="/?page=creer-techmonstre">technique pour un monstre</a>
+        </div>
+      </li>
+      <?php require 'logout.php'; ?>
       <?php }else{ ?>
         <li class="nav-item active">
           <a class="nav-link" data-toggle="modal" data-target="#connectModal">Inscription/connection</a>

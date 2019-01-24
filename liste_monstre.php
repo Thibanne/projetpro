@@ -3,7 +3,7 @@
   <form id="listMonstre" action="?page=combat" method="post">
     <div class="col">
       <div class="form-group">
-        <input class="btn btn-secondary form-control" type="submit" name="combat" value="Gobelin" />
+        <input class="btn btn-secondary form-control" type="submit" name="combat" value="Gobelin" title="petite bestiole désagréable (voir Anousome pour plus de details)" />
       </div>
       <div class="form-group">
         <input class="btn btn-secondary form-control" type="submit" name="combat" value="Orc" />

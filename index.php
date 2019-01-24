@@ -49,8 +49,8 @@ if(isset($_GET['logout'])){
       if(isset($_GET['page'])){
         if($_GET['page'] == 'combat'){
           require 'combat/combat.php';
-        }else if($_GET['page'] == 'creer-monstre'){
-          require 'formCreateMonstre.php';
+        }else if($_GET['page'] == 'liste-monstre'){
+          require 'listeMonstre.php';
         }else if($_GET['page'] == 'creer-stats'){
           require 'formCreateStats.php';
         }else if($_GET['page'] == 'creer-technique'){
@@ -59,6 +59,16 @@ if(isset($_GET['logout'])){
           require 'listetech.php';
         }else if($_GET['page'] == 'cree-statsTech'){
           require 'createStatsTech.php';
+        }else if($_GET['page'] == 'creer-techjoueur'){
+          require 'createTechJoueur.php';
+        }else if($_GET['page'] == 'creer-techmonstre'){
+          require 'createTechMonstre.php';
+        }else if($_GET['page'] == 'profilMonstre'){
+          require 'profilMonstre.php';
+        }else if($_GET['page'] == 'creer-Monstre'){
+          require 'formCreateMonstre.php';
+        }else if($_GET['page'] == 'deleteMonstre'){
+          require 'deleteMonstre.php';
         }
       }else{
         require 'liste_monstre.php';

@@ -28,6 +28,15 @@ a{
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+.navbar-dark .navbar-nav .nav-link, .navbar-dark .navbar-nav .nav-link:hover{
+  color: white;
+}
+.navbar .dropdown-menu, .dropdown-item:hover{
+  background-color: #444444;
+}
+.navbar .dropdown-item{
+  color: white;
+}
 .modal-header{
   background-color: black;
 }

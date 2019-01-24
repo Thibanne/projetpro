@@ -1,17 +1,7 @@
-Etant un grand joueur de Jeux de rôle que ce soit sur papier ou en jeux vidéo, j'ai eux cette idée de reproduire un jeux de rôle.
-Mon site consiste a faire des combats de joueur contre l'ordinateur
-(expliquer jdr)
-
-Bonjour à tous, et merci d’être venue à cette réunion d’information a propos du RP.
-Bien merci, donc maintenant commençons cette réunion. Je vais tout d’abord vous réexpliquer le RP (Rôle Play).
-Le Rôle Play est une interprétation de votre personnage, une manière de lui donner vie au travers de vous-même,
-c’est s'efforcé de rentrer dans la psychologie de son personnage et de voir l'univers du jeu de son point de vue,
-de l'intérieur, de façon à l'y faire agir de manière cohérente.
-Ainsi on distingue le HRP du RP, Le HRP correspond aux paroles du joueur en tant qu'être humain réel,
-il sert à décrire les actions de son personnage (sorte de didascalie), à parler des règles et du système de jeu et
-tout simplement à bavarder avec les autres joueurs et les personnes extérieures au jeu, il inclut en particulier
-le discours narratif : description d'un lieu, d'une action.
-Bien maintenant passons a TotalRP.
-TotalRP est un addon qui permet permet d'aider les joueur dans les RP, en effet il permet non seulement de créé
-une fiche de personnage complet (Desciption, personnalité, histoire, ...), de créé items et états personnalisé,
-mais aussi de créé ses propres quetes et même d'utiliser des sons (parole de personnage, son ambiant, ...).
+Le projet que je vous présente aujourd'hui, est un site ludique, qui permet à un ou plusieurs joueurs de participer à une quête, pour combattre le maléfique GOHO?, pour libérer les terres de Tolemak.
+Ce site, "dont vous êtes le héros" est inspiré par la célèbre collection de livre-jeux du même nom.
+Le site se décompose en plusieurs parties:
+La première partie, est un espace utilisateur, qui permet de s'enregistrer dans la base de données, se connecter, modifier ses informations, et consulter la fiche de son personnage.
+La seconde partie, dédiée au jeu lui-même. L'utilisateur, via son personnage, entre en jeu, par une introduction textuelle, qui lui explique les objectifs de sa quête. le joueur aura le choix de suivre différents parcours, qui le mèneront, soit, directement à la suite de l'histoire, ou soit, a affronter un adversaire pour enfin y accéder.
+La troisième partie du site, est donc le systeme de combat lui-même. Le systeme de combat est un "tour par tour". Le joueur a une possibilité de choix de plusieurs attaques. Une fois celles-ci choisies, l'IA(Intelligence artificielle) effectue son action de réponse ce qui conclue le tour.
+La partie se termine, soit, quand le joueur bat le BOSS final, soit, quand il est vaincu au combat ou a fait une erreur de parcours.

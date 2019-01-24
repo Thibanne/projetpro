@@ -79,4 +79,16 @@ function descriptionSkill($key, $rate){
   }
 }
 
+function descriptionMonsterBattle($key, $rate){
+  if($key == 'Attaque'){
+    echo('Inflige '.abs($rate['degats']['PV']).' de dégâts');
+  }else if($key == 'Soin'){
+    echo('Soigne '.abs($rate['degats']['PV']).' points de vie pour '.abs($rate['cout']['mana']).' de mana.');
+  }else if($key == 'Coup assomant'){
+    echo('Inflige '.abs($rate['degats']['PV']).' de dégâts et assome pendant '.$rate['degats']['stun'].' tour(s) pour '.abs($rate['cout']['mana']).' de mana.');
+  }else{
+    echo('Inflige '.abs($rate['degats']['PV']).' de dégâts pour '.abs($rate['cout']['mana']).' de mana.');
+  }
+}
+
 ?>

@@ -2,6 +2,7 @@
 require 'techniques.php';
 if(isset($_POST['combat'])){
   require 'initCombat.php';
+  $_SESSION['basePVmonster'] = $_SESSION['monstre']['PV'];
   $monsterName = strtolower($_SESSION['avec']);
   $monsterName = str_replace(' ', '-', $monsterName);
   header('Location: ?page=combat&'.$monsterName);
@@ -31,7 +32,7 @@ if(isset($_SESSION['battleIn'])){
     victoryModal('Defaite', 'vous a vaincu !');
   }
   // Affichage des statistiques joueur et monstres
-  require 'journaldecombat.php';  
+  require 'journaldecombat.php';
 // sinon je renvoi sur la page de selection
 } else {
   header('Location:http://projetpro/');
