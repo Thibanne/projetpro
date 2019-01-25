@@ -1,3 +1,17 @@
+<?php
+$connect = con();
+$sql = "SELECT
+  Technique.id AS `idTechnique`,
+  TechniqueUtilisateur.id AS `idTechJoueur`,
+  Technique.*,
+  TechniqueUtilisateur.*
+FROM TechniqueUtilisateur
+INNER JOIN Technique ON Technique.id = TechniqueUtilisateur.id_technique
+WHERE TechniqueUtilisateur.id_utilisateur = $id";
+$result = $connect->query($sql);
+$tableTechjoueur = $result->fetch_all(MYSQLI_ASSOC);
+?>
+
 <!-- Liste des actions utilisable en combat -->
 <form class="" action="" method="post">
   <?php

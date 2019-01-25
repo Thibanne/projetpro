@@ -4,7 +4,7 @@ if (isset($_POST['connection'])) {
   foreach ($_POST as $key => $value) {
     $$key = $connect->real_escape_string($value);
   }
-  $sql = "SELECT `Pseudo`, `Motdepasse` FROM `Utilisateur` WHERE `Pseudo` LIKE '$login'";
+  $sql = "SELECT `id`, `Pseudo`, `Motdepasse` FROM `Utilisateur` WHERE `Pseudo` LIKE '$login'";
   $result = $connect->query($sql);
   if ($result === false) {
     echo 'Erreur de sql: '. $connect->error;
@@ -14,6 +14,7 @@ if (isset($_POST['connection'])) {
     $row = $result->fetch_assoc();
     if(password_verify($password.secretKey, $row['Motdepasse'])){
       $_SESSION['pseudo'] = $login;
+      $_SESSION['id'] = $row['id'];
       $_SESSION['joueur'] = [
         'PV' => 100,
         'mana' => 100,

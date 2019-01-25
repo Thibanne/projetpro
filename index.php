@@ -1,6 +1,8 @@
 <?php session_start();
 require 'config.php';
-require 'fonction.php';
+require 'app/fonction.php';
+require 'app/modeleMonstre.php';
+require 'app/modeleTech.php';
 // Avec session_start() je récupère les données enregistré dans une valeur ID unique, ou j'en génère une vide
 // je vérifie et je valide le formulaire de connection
 // S'il se deconnecte je vide la session
@@ -38,9 +40,9 @@ if(isset($_GET['logout'])){
     <div class="row justify-content-between">
       <?php
       if(isset($_GET['page']) && $_GET['page'] != 'combat'){
-        require 'navbar.php';
+        require 'site/navbar.php';
       }else if(!isset($_GET['page'])){
-        require 'navbar.php';
+        require 'site/navbar.php';
       }
       ?>
     </div>
@@ -50,28 +52,26 @@ if(isset($_GET['logout'])){
         if($_GET['page'] == 'combat'){
           require 'combat/combat.php';
         }else if($_GET['page'] == 'liste-monstre'){
-          require 'listeMonstre.php';
+          require urlAdminListe.'listeMonstre.php';
         }else if($_GET['page'] == 'creer-stats'){
-          require 'formCreateStats.php';
+          require urlAdminCreer.'formCreateStats.php';
         }else if($_GET['page'] == 'creer-technique'){
-          require 'formCreateTechnique.php';
+          require urlAdminCreer.'formCreateTechnique.php';
         }else if($_GET['page'] == 'listetech'){
-          require 'listetech.php';
+          require urlAdminListe.'listetech.php';
         }else if($_GET['page'] == 'cree-statsTech'){
-          require 'createStatsTech.php';
+          require urlAdminCreer.'createStatsTech.php';
         }else if($_GET['page'] == 'creer-techjoueur'){
-          require 'createTechJoueur.php';
+          require urlAdminCreer.'createTechJoueur.php';
         }else if($_GET['page'] == 'creer-techmonstre'){
-          require 'createTechMonstre.php';
+          require urlAdminCreer.'createTechMonstre.php';
         }else if($_GET['page'] == 'profilMonstre'){
-          require 'profilMonstre.php';
+          require urlAdminProfil.'profilMonstre.php';
         }else if($_GET['page'] == 'creer-Monstre'){
-          require 'formCreateMonstre.php';
-        }else if($_GET['page'] == 'deleteMonstre'){
-          require 'deleteMonstre.php';
+          require urlAdminCreer.'formCreateMonstre.php';
         }
       }else{
-        require 'liste_monstre.php';
+        require 'combat/liste_monstre.php';
         resetJoueur();
       }
     }else{

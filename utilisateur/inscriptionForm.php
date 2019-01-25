@@ -14,7 +14,7 @@
     }
     $connect->close();
   }
-require 'regexform.php';
+require 'app/regexform.php';
 ?>
 <!-- formulaire d'inscription -->
 <form class="" action="?page" method="post">

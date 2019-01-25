@@ -24,7 +24,7 @@
           <a class="dropdown-item" href="/?page=creer-techmonstre">technique pour un monstre</a>
         </div>
       </li>
-      <?php require 'logout.php'; ?>
+      <?php require 'utilisateur/logout.php'; ?>
       <?php }else{ ?>
         <li class="nav-item active">
           <a class="nav-link" data-toggle="modal" data-target="#connectModal">Inscription/connection</a>
@@ -41,13 +41,13 @@
                   <div class="row">
                     <div class="col">
                       <?php
-                      require 'inscriptionForm.php';
+                      require 'utilisateur/inscriptionForm.php';
                       ?>
                     </div>
                     <hr>
                     <div class="col">
                       <?php
-                      require 'connectionForm.php';
+                      require 'utilisateur/connectionForm.php';
                       ?>
                     </div>
                   </div>

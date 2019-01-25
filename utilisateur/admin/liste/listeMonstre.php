@@ -5,9 +5,6 @@ if(isset($_POST['del'])) {
     $deletequery = "DELETE FROM Monstre WHERE `id` = $_POST[id]";
     $connect->query($deletequery);
 }
-$sql = "SELECT * FROM `Monstre`";
-$result = $connect->query($sql);
-$tableMonstre = $result->fetch_all(MYSQLI_ASSOC);
 ?>
 <div class="col align-self-center">
   <table class="table table-striped">
@@ -15,14 +12,16 @@ $tableMonstre = $result->fetch_all(MYSQLI_ASSOC);
       <tr>
         <th>Id</th>
         <th>Nom</th>
+        <th>Description</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
-      <?php foreach($tableMonstre as $key => $value){ ?>
+      <?php foreach(listeMonstre() as $key => $value){ ?>
         <tr>
           <th><?= $value['id'] ?></th>
           <th><?= $value['Nom'] ?></th>
+          <th><?= $value['Description'] ?></th>
           <th>
             <a href="/?page=profilMonstre&id=<?= $value['id'] ?>" class="btn btn-secondary">Afficher</a>
             <a href="#" class="btn btn-secondary">Modifier</a>

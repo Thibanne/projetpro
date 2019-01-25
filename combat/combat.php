@@ -1,7 +1,7 @@
 <?php
-require 'techniques.php';
+require 'combat/techniques.php';
 if(isset($_POST['combat'])){
-  require 'initCombat.php';
+  require 'combat/initCombat.php';
   $_SESSION['basePVmonster'] = $_SESSION['monstre']['PV'];
   $monsterName = strtolower($_SESSION['avec']);
   $monsterName = str_replace(' ', '-', $monsterName);
@@ -17,13 +17,13 @@ if(isset($_SESSION['battleIn'])){
       $_SESSION['joueur']['stun'] -= 1;
       jdc('Vous êtes assomé !');
     }else{
-      require 'actionJoueur.php';
+      require 'combat/actionJoueur.php';
     }
     if($_SESSION['monstre']['stun'] > 0){
       $_SESSION['monstre']['stun'] -= 1;
       jdc($_SESSION['avec'].' est assomé !');
     }else{
-      require 'actionMonstre.php';
+      require 'combat/actionMonstre.php';
     }
   }
   if($_SESSION['monstre']['PV'] <= 0){
@@ -32,7 +32,7 @@ if(isset($_SESSION['battleIn'])){
     victoryModal('Defaite', 'vous a vaincu !');
   }
   // Affichage des statistiques joueur et monstres
-  require 'journaldecombat.php';
+  require 'combat/journaldecombat.php';
 // sinon je renvoi sur la page de selection
 } else {
   header('Location:http://projetpro/');

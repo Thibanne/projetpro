@@ -10,8 +10,8 @@ if (isset($_POST['createMonster'])) {
     $$key = $connect->real_escape_string($value);
   }
   $sql = "INSERT INTO Monstre
-  (`Nom`)
-  VALUES ('$lastname');";
+  (`Nom`, `Description`)
+  VALUES ('$monsterName', '$descMonster');";
   $result = $connect->query($sql);
   if ($result === false) {
     echo 'Erreur de sql: '. $connect->error;
@@ -22,8 +22,12 @@ if (isset($_POST['createMonster'])) {
 <!-- formulaire de création de monstre -->
 <form class="" action="" method="post">
   <div>
-    <label for="lastname"><strong>Nom : </strong></label></br>
-    <input type="text" id="lastname" name="lastname" value="" />
+    <label for="name"><strong>Nom : </strong></label></br>
+    <input type="text" id="name" name="monsterName" value="" />
+  </div>
+  <div>
+    <label for="desc"><strong>Description : </strong></label></br>
+    <input type="text" id="desc" name="descMonster" value="" />
   </div>
   <button class="btn btn-secondary" type="submit" name="createMonster">Créé</button>
 </form>
