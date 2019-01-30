@@ -101,3 +101,12 @@ a{
   margin-left: 15rem;
   margin-top: 2rem;
 }
+.TableTechCentralAlign{
+  margin-left: 14rem;
+  padding-right: 15rem;
+}
+.tableTechProfilMiddleReduc{
+  display: inline-block;
+  width: 49.7%;
+  vertical-align: top;
+}
