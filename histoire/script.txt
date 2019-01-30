@@ -1,0 +1,88 @@
+Lieu 0
+Vous vous levez dans votre chambre vous avez enfin l'age de partir à l'aventure.
+Préssé de partir vous empoignée votre arme et partez en direction de la sortie.
+A peine la porte ouverte vous êtes surpris par le regard de votre petit(e) ami(e).
+Lynel: J'en était sur ! Tellement préssé de partir qu'il ne fait même pas attention a lui.
+Vous vous rellevez en vous époustant, ainsi qu'en pestant légèrement.
+Lynel: Et puis quoi encore <nomdujoueur> ?! Tu croi vraiment partir sans me dire aurevoir ?!
+Vous tentez de vous excusez, en vain.
+Lynel: Je ne te laisserai pas partir !
+Lynel: Enfin pas sans un dernier baiser.
+Vous riez nerveusement, histoire de ne pas lui faire comprendre qu'elle vous a fait une frayeur
+Lynel: Tu as intéret a revenir en entier, sain et sauf, sinon croi moi je me chargerai personnelement de ton cas !
+Apres un bref baiser, vous reprenez votre route, en hâte de decouvrir une quete a accomplir.
+
+Lieu 1
+Vous croiser le chemin d'un <nomdumonstre>, vous dégainer alors votre arme.
+Combat avec <nomdumonstre>.
+Si Défaite (impossible): A peine l'aventure débuter que vous rentré tout peunot chez vous, votre amie eclate de rire en vous voyant.
+Si victoire:
+Votre premier combat reussi, vous vous sentez plus en confiance pour la suite de votre aventure.
+
+Lieu 2
+Vous arrivez à une auberge, pourquoi ne pas faire une halte ? il pourrait y avoir des quetes a accomplir, ou au moins une couchette pour vous reposez.
+Choix: Auberge = Lieu 3a ; suite = Lieu 4a
+
+Lieu 3a
+A votre entré une forte odeur d'alcool et de renfermer vous "tape" en pleine figure, mais cela ne vous arrete pas.
+Vous voyez que l'auberge n'a pas l'air si remplie.
+choix: Parler a l'aubergiste = Lieu 3b ; Voir s'il y a des quetes parmis les clients = Lieu 3c
+
+Lieu 3b
+Vous vous dirigez directement à l'aubergiste et lui demander ...
+Choix: S'il a des quetes ou rumeurs a partager = Lieu 3d ; Si vous pouvez prendre un chambre pour dormir = Lieu 3e
+
+Lieu 3c
+Vous tentez d'engagé la conversation avec divers client sans succés, la plupart étant preque ivre mort.
+choix: vous partez = Lieu 4a ; Parler a l'aubergiste = Lieu 3b
+
+Lieu 3d
+Barman: Hum ... il y a bien cette histoire de tour étrange, mais pas sur que ...
+Vous le coupez en insistant que cela vous intérrèsse et que vous voulez en savoir plus
+Barman: Est bien, ça doit bien faire 2, 3 semaines que des clients parelent d'une tour qui serait apparu comme ça POUF!.
+Vous restez muet voulant en savoir plus
+Barman: Vous que vous le vouliez j'ai entendu que cela ce serai produit vers l'ouest d'ici sans doute vers Worstchire, attention je ça c'est que des rumeurs, rien de bien concret.
+Vous rester sur votre position et le remercier pour cette information, qui pour vous est bien plus que suffisant pour justifier l'aventure.
+Choix: Prendre un chambre pour dormir = Lieu 3g ; Partir = Lieu 4b
+
+Lieu 3e
+Vous passez une nuit agité, vous arrivé peinement a vous endormir a cause du bruit ambiant.
+choix: Tant pis j'y vais je dormirai ailleur = Lieu 3f ; Tenté de dormi quand même = Fin de l'aventure (assassinat)
+Mort: Vous vous faite tuer dans votre sommeil, L'aventure s'arrete pour vous.
+
+Lieu 3f
+Vous vous levez, bien décidé a partir malgrés le sommeil, et vous tombez nez à nez avec un bandit qui venait pour vous détroussez sans doute coyant que vous dormiez.
+Vous degainez votre arme et vous preparez a combattre
+Combat <nomdumonstre>
+Si defaite : Le <nomdumonstre> vous poignarde a plusieur reprise, une fois satisfait il prend toute vos affair et vous laisse mort sur le plancher de la chambre.
+Si victoire : Vous finissez par lui donner le coup fatal et décider de lui piquer son argent et ses armes, puis vous partez. = Lieu 4c
+
+Lieu 3g
+Vous passez une nuit agité, vous arrivé peinement a vous endormir a cause du bruit ambiant.
+choix: Tant pis j'y vais je dormirai ailleur = Lieu 3h ; Tenté de dormi quand même = Fin de l'aventure (assassinat)
+Mort: Vous vous faite tuer dans votre sommeil, L'aventure s'arrete pour vous.
+
+Lieu 3h
+Vous vous levez, bien décidé a partir malgrés le sommeil, et vous tombez nez à nez avec un bandit qui venait pour vous détroussez sans doute coyant que vous dormiez.
+Vous degainez votre arme et vous preparez a combattre
+Combat <nomdumonstre>
+Si defaite : Le <nomdumonstre> vous poignarde a plusieur reprise, une fois satisfait il prend toute vos affair et vous laisse mort sur le plancher de la chambre.
+Si victoire : Vous finissez par lui donner le coup fatal et décider de lui piquer son argent et ses armes, puis vous partez. = Lieu 4d
+
+Lieu 4a (pas info/pas dormi)
+Vous arrivez a une intersection, trois chemin s'offre a vous par ou allez ? vous voyer un panneau et regardé ce qui y est écrit.
+Panneau : <- Worstchire |^| Skyhill -> Picbourg || Departure
+Choix: Worstchire = Lieu ** ; Skyhill = lieu ** ; Picbourg = ** ; Departure = Fin de l'aventure (retour maison)
+Fin: Comme l'a dit un celèbre aventurier "l'aventure c'est pas fait pour les couillons, J'aurais mieux fait de rester chez moi, a faire des chaises en bois"
+
+Lieu 4b (info/pas dormi)
+Vous arrivez a une intersection, trois chemin s'offre a vous par ou allez ? vous voyer un panneau et regardé ce qui y est écrit.
+Panneau : <- Worstchire |^| Skyhill -> Picbourg || Departure
+Choix: Worstchire = Lieu ** ; Skyhill = lieu ** ; Picbourg = ** ; Departure = Fin de l'aventure (retour maison)
+Fin: Comme l'a dit un celèbre aventurier "l'aventure c'est pas fait pour les couillons, J'aurais mieux fait de rester chez moi, a faire des chaises en bois"
+
+Lieu 4c (info/dormi)
+Vous arrivez a une intersection, trois chemin s'offre a vous par ou allez ? vous voyer un panneau et regardé ce qui y est écrit.
+Panneau : <- Worstchire |^| Skyhill -> Picbourg || Departure
+Choix: Worstchire = Lieu ** ; Skyhill = lieu ** ; Picbourg = ** ; Departure = Fin de l'aventure (retour maison)
+Fin: Comme l'a dit un celèbre aventurier "l'aventure c'est pas fait pour les couillons, J'aurais mieux fait de rester chez moi, a faire des chaises en bois"

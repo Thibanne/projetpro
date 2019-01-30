@@ -1,8 +1,10 @@
 <?php session_start();
 require 'config.php';
 require 'app/fonction.php';
-require 'app/modeleMonstre.php';
-require 'app/modeleTech.php';
+$modelesFiles = autoRequireModele();
+foreach ($modelesFiles as $key => $value) {
+  require 'app/'.$value;
+}
 // Avec session_start() je récupère les données enregistré dans une valeur ID unique, ou j'en génère une vide
 // je vérifie et je valide le formulaire de connection
 // S'il se deconnecte je vide la session
@@ -21,6 +23,8 @@ if(isset($_GET['logout'])){
   <link rel="stylesheet" href="assets/css/style.css" />
   <?php
   if(isset($_GET['page'])){
+    if($_GET['page'] == 'histoire')
+      ?><link rel="stylesheet" href="assets/css/histoire.css" /><?php
     if($_GET['page'] == 'combat'){
       ?>
         <link rel="stylesheet" href="assets/css/combat.css" />
@@ -36,39 +40,63 @@ if(isset($_GET['logout'])){
   <title>GOHO?</title>
 </head>
 <body>
-  <div class="container">
+  <div id="body"class="container">
     <div class="row justify-content-between">
-      <?php
-      if(isset($_GET['page']) && $_GET['page'] != 'combat'){
-        require 'site/navbar.php';
-      }else if(!isset($_GET['page'])){
-        require 'site/navbar.php';
-      }
-      ?>
+      <div class="offset-2">
+        <?php
+        if(isset($_GET['page']) && $_GET['page'] != 'combat'){
+          require 'site/navbar.php';
+        }else if(!isset($_GET['page'])){
+          require 'site/navbar.php';
+        }
+        ?>
+      </div>
     </div>
     <?php
     if(isConnected()){
       if(isset($_GET['page'])){
         if($_GET['page'] == 'combat'){
           require 'combat/combat.php';
-        }else if($_GET['page'] == 'liste-monstre'){
+        }else if($_GET['page'] == 'histoire'){
+          require urlhistoire.'couverture.php';
+        }
+        // Liste
+        else if($_GET['page'] == 'liste-monstre'){
           require urlAdminListe.'listeMonstre.php';
-        }else if($_GET['page'] == 'creer-stats'){
+        }else if($_GET['page'] == 'liste-stats'){
+          require urlAdminListe.'listeStats.php';
+        }else if($_GET['page'] == 'liste-technique'){
+          require urlAdminListe.'listeTechnique.php';
+        }
+        // Profil
+        else if($_GET['page'] == 'profilMonstre'){
+          require urlAdminProfil.'profilMonstre.php';
+        }else if($_GET['page'] == 'profilStats'){
+          require urlAdminProfil.'profilStats.php';
+        }else if($_GET['page'] == 'profilTechnique'){
+          require urlAdminProfil.'profilTechnique.php';
+        }
+        // Créer
+        else if($_GET['page'] == 'creer-stats'){
           require urlAdminCreer.'formCreateStats.php';
         }else if($_GET['page'] == 'creer-technique'){
           require urlAdminCreer.'formCreateTechnique.php';
-        }else if($_GET['page'] == 'listetech'){
-          require urlAdminListe.'listetech.php';
-        }else if($_GET['page'] == 'cree-statsTech'){
+        }else if($_GET['page'] == 'creer-statsTech'){
           require urlAdminCreer.'createStatsTech.php';
         }else if($_GET['page'] == 'creer-techjoueur'){
           require urlAdminCreer.'createTechJoueur.php';
         }else if($_GET['page'] == 'creer-techmonstre'){
           require urlAdminCreer.'createTechMonstre.php';
-        }else if($_GET['page'] == 'profilMonstre'){
-          require urlAdminProfil.'profilMonstre.php';
         }else if($_GET['page'] == 'creer-Monstre'){
           require urlAdminCreer.'formCreateMonstre.php';
+        }
+        // Modifier
+        else if($_GET['page'] == 'modify-technique'){
+          require urlAdminModifier.'formModTechnique.php';
+        }else if($_GET['page'] == 'modify-monstre'){
+          require urlAdminModifier.'formModMonstre.php';
+        }else if($_GET['page'] == 'modify-stats'){
+          require urlAdminModifier.'formModStats.php';
         }
       }else{
         require 'combat/liste_monstre.php';

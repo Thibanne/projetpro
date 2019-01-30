@@ -15,14 +15,15 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/?page=liste-monstre">monstre</a>
-          <a class="dropdown-item" href="/?page=creer-stats">stats</a>
-          <a class="dropdown-item" href="/?page=creer-technique">technique</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/?page=listetech">liste tech</a>
+          <a class="dropdown-item" href="/?page=liste-stats">stats</a>
+          <a class="dropdown-item" href="/?page=liste-technique">technique</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="/?page=creer-techjoueur">technique pour un joueur</a>
           <a class="dropdown-item" href="/?page=creer-techmonstre">technique pour un monstre</a>
         </div>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/?page=histoire">Histoire</a>
       </li>
       <?php require 'utilisateur/logout.php'; ?>
       <?php }else{ ?>

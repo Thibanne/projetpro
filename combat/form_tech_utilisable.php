@@ -1,31 +1,20 @@
 <?php
-$connect = con();
-$sql = "SELECT
-  Technique.id AS `idTechnique`,
-  TechniqueUtilisateur.id AS `idTechJoueur`,
-  Technique.*,
-  TechniqueUtilisateur.*
-FROM TechniqueUtilisateur
-INNER JOIN Technique ON Technique.id = TechniqueUtilisateur.id_technique
-WHERE TechniqueUtilisateur.id_utilisateur = $id";
-$result = $connect->query($sql);
-$tableTechjoueur = $result->fetch_all(MYSQLI_ASSOC);
-?>
 
+?>
 <!-- Liste des actions utilisable en combat -->
 <form class="" action="" method="post">
   <?php
-  foreach ($techJoueur as $key => $value) {
-    if(abs($value['cout']['mana']) <= $_SESSION['joueur']['mana']){
+  foreach (techJoueur($_SESSION['id']) as $key => $tech) {
+    if(abs(techCout($tech['id'], 'mana')) <= $_SESSION['joueur']['mana']){
       ?>
       <div class="skillButton">
-        <input type="submit" name="skill" value="<?= $key ?>" title="<?= descriptionSkill($key ,$value) ?>" />
+        <input type="submit" name="skill" value="<?= $tech['Nom'] ?>" title="<?= $tech['Description'] ?>" />
       </div>
       <?php
     }else{
       ?>
       <div class="skillButton">
-        <input type="submit" name="skill" value="<?= $key ?>" title="Pas assez de mana !" disabled />
+        <input type="submit" name="skill" value="<?= $tech['Nom'] ?>" title="Pas assez de mana !" disabled />
       </div>
       <?php
     }

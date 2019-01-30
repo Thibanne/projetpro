@@ -4,4 +4,5 @@
   define('urlAdminListe', 'utilisateur/admin/liste/');
   define('urlAdminModifier', 'utilisateur/admin/modifier/');
   define('urlAdminProfil', 'utilisateur/admin/profil/');
+  define('urlhistoire', 'histoire/');
 ?>

@@ -28,3 +28,4 @@ if(isset($_GET['id'])){
   </tbody>
 </table>
 <?php } ?>
+<a href="/?page=liste-monstre" class="btn btn-secondary">Retour liste</a>

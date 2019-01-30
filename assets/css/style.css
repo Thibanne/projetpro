@@ -1,4 +1,4 @@
-html{
+html, body, #body{
   width: 100%;
   height: 100%;
   padding: 0;
@@ -11,6 +11,13 @@ body {
   background-attachment: fixed;
   color: white;
 }
+.container {
+  max-width: none;
+}
+.row{
+  margin-left: 0;
+  margin-right: 0;
+}
 pre {
   color: white;
 }
@@ -20,6 +27,18 @@ hr {
 }
 a{
   outline: none;
+}
+.table th, .table td {
+  vertical-align: middle;
+}
+.table .tableActionMonstre {
+  min-width: 300px;
+}
+.table .tableActionStats {
+  min-width: 200px;
+}
+.table .listeTechAction {
+  min-width: 430px;
 }
 .error{
   color: red;
@@ -56,6 +75,12 @@ a{
 #listMonstre{
   margin-top: 3rem;
 }
+.listingBattleMonster{
+  margin-left: 10rem;
+}
+.listingBattleMonster input{
+  max-width: 120px;
+}
 #jdc{
   background-color: #4445;
   border-radius: 20px;
@@ -71,4 +96,8 @@ a{
 }
 #jdc p{
   margin: 0;
+}
+.create-modForm{
+  margin-left: 15rem;
+  margin-top: 2rem;
 }

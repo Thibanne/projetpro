@@ -2,7 +2,7 @@
 $connect = con();
 // Monstre
 if(isset($_POST['del'])) {
-    $deletequery = "DELETE FROM Monstre WHERE `id` = $_POST[id]";
+    $deletequery = "DELETE FROM `Monstre` WHERE `id` = $_POST[id]";
     $connect->query($deletequery);
 }
 ?>
@@ -13,7 +13,7 @@ if(isset($_POST['del'])) {
         <th>Id</th>
         <th>Nom</th>
         <th>Description</th>
-        <th>Action</th>
+        <th class="tableActionMonstre">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -21,10 +21,10 @@ if(isset($_POST['del'])) {
         <tr>
           <th><?= $value['id'] ?></th>
           <th><?= $value['Nom'] ?></th>
-          <th><?= $value['Description'] ?></th>
+          <td><?= $value['Description'] ?></td>
           <th>
             <a href="/?page=profilMonstre&id=<?= $value['id'] ?>" class="btn btn-secondary">Afficher</a>
-            <a href="#" class="btn btn-secondary">Modifier</a>
+            <a href="/?page=modify-monstre&id=<?= $value['id'] ?>" class="btn btn-secondary">Modifier</a>
             <form class="d-inline" action="" method="post">
               <input type="hidden" name="id" value="<?= $value['id'] ?>">
               <button class="btn btn-warning" type="submit" name="del">Supprimer</button>
@@ -34,5 +34,5 @@ if(isset($_POST['del'])) {
       </tr>
     </tbody>
   </table>
-  <a href="/?page=creer-Monstre" class="btn btn-secondary">Créer nouveau</a>
+  <a href="/?page=creer-Monstre" class="btn btn-secondary">Créer nouveau monstre</a>
 </div>
