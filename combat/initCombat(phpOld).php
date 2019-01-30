@@ -13,9 +13,6 @@ if( $_POST['combat']=='Gobelin'){
     'mana' => 0,
     'stun' => 0
   ];
-  $theMonstre;
-  $_SESSION['monstre'] = $theMonstre;
-
   $_SESSION['techMonstre'] = [
     'Attaque' => [
       'degats' => ['PV' => -5],

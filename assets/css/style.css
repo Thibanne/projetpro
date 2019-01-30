@@ -110,3 +110,9 @@ a{
   width: 49.7%;
   vertical-align: top;
 }
+.listTableBackground {
+  background-color: #000000C7;
+}
+table.tableTechProfilAssoc {
+  margin-bottom: 0;
+}

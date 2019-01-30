@@ -7,7 +7,7 @@ if(isset($_POST['del'])) {
 }
 ?>
 <div class="col align-self-center">
-  <table class="table table-striped">
+  <table class="table table-striped listTableBackground">
     <thead>
       <tr>
         <th>id</th>
@@ -23,7 +23,7 @@ if(isset($_POST['del'])) {
           <th><?= $value['Nom'] ?></th>
           <td><?= $value['Description'] ?></td>
           <th>
-            <a href="/?page=profilTechnique&id=<?= $value['id'] ?>" class="btn btn-secondary">Afficher</a>
+            <a href="/?page=profil-technique&id=<?= $value['id'] ?>" class="btn btn-secondary">Afficher</a>
             <a href="/?page=modify-technique&id=<?= $value['id'] ?>" class="btn btn-secondary">Modifier</a>
             <a href="/?page=creer-statsTech&id=<?= $value['id'] ?>&nom=<?= $value['Nom'] ?>" class="btn btn-secondary">Assigner stats</a>
             <form class="d-inline" action="" method="post">

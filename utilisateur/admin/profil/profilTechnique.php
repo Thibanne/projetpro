@@ -27,7 +27,7 @@ if(isset($_GET['id'])){
   $tableTechProfilCout = $result->fetch_all(MYSQLI_ASSOC);
   ?>
   <div class="TableTechCentralAlign">
-    <table class="table">
+    <table class="table listTableBackground tableTechProfilAssoc">
       <thead>
         <tr>
           <th scope="col" style="width:33vw;">Valeur de <?= $tableTechProfilDegat['0']['techNom'] ?></th>
@@ -42,7 +42,7 @@ if(isset($_GET['id'])){
       </tbody>
     </table>
     <div class="tableTechProfilMiddleReduc">
-      <table class="table">
+      <table class="table listTableBackground">
         <thead>
           <tr>
             <th scope="col">Valeur</th>
@@ -60,7 +60,7 @@ if(isset($_GET['id'])){
       </table>
     </div>
     <div class="tableTechProfilMiddleReduc">
-      <table class="table">
+      <table class="table listTableBackground">
         <thead>
           <tr>
             <th scope="col">Valeur</th>

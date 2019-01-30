@@ -23,8 +23,11 @@ if(isset($_GET['logout'])){
   <link rel="stylesheet" href="assets/css/style.css" />
   <?php
   if(isset($_GET['page'])){
-    if($_GET['page'] == 'histoire')
-      ?><link rel="stylesheet" href="assets/css/histoire.css" /><?php
+    $tableStrPage = ['creer', 'liste', 'modify', 'profil'];
+    if(findGetPage($tableStrPage)){
+      ?><link rel="stylesheet" href="assets/css/BDD.css" /><?php }
+    if($_GET['page'] == 'histoire'){
+      ?><link rel="stylesheet" href="assets/css/histoire.css" /><?php }
     if($_GET['page'] == 'combat'){
       ?>
         <link rel="stylesheet" href="assets/css/combat.css" />
@@ -63,17 +66,17 @@ if(isset($_GET['logout'])){
         // Liste
         else if($_GET['page'] == 'liste-monstre'){
           require urlAdminListe.'listeMonstre.php';
+        }else if($_GET['page'] == 'liste-monstreStats'){
+          require urlAdminListe.'listeMonstreStats.php';
         }else if($_GET['page'] == 'liste-stats'){
           require urlAdminListe.'listeStats.php';
         }else if($_GET['page'] == 'liste-technique'){
           require urlAdminListe.'listeTechnique.php';
         }
         // Profil
-        else if($_GET['page'] == 'profilMonstre'){
+        else if($_GET['page'] == 'profil-monstre'){
           require urlAdminProfil.'profilMonstre.php';
-        }else if($_GET['page'] == 'profilStats'){
-          require urlAdminProfil.'profilStats.php';
-        }else if($_GET['page'] == 'profilTechnique'){
+        }else if($_GET['page'] == 'profil-technique'){
           require urlAdminProfil.'profilTechnique.php';
         }
         // Créer
@@ -89,6 +92,8 @@ if(isset($_GET['logout'])){
           require urlAdminCreer.'createTechMonstre.php';
         }else if($_GET['page'] == 'creer-Monstre'){
           require urlAdminCreer.'formCreateMonstre.php';
+        }else if($_GET['page'] == 'creer-statsMonstre'){
+          require urlAdminCreer.'createStatsMonstre.php';
         }
         // Modifier
         else if($_GET['page'] == 'modify-technique'){

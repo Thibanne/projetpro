@@ -76,4 +76,12 @@ function autoRequireModele(){
   return $modelesFiles;
 }
 
+function findGetPage($tableStrPage){ 
+  foreach ($tableStrPage as $key => $value) {
+    if(strpos($_GET['page'], $value) !== false){
+      return true;
+    }
+  }
+  return false;
+}
 ?>

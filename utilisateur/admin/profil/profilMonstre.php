@@ -13,7 +13,7 @@ if(isset($_GET['id'])){
   $result = $connect->query($sql);
   $tableTechMonstre = $result->fetch_all(MYSQLI_ASSOC);
 ?>
-<table class="table table-striped">
+<table class="table table-striped listTableBackground">
   <thead>
     <tr>
       <th>Technique(s) de <?= $tableTechMonstre['0']['Monstrenom'] ?></th>

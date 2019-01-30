@@ -11,21 +11,19 @@ if(isset($_POST['del'])) {
     <thead>
       <tr>
         <th>Id</th>
-        <th>Nom</th>
-        <th>Description</th>
+        <th>Stats</th>
+        <th>Valeur</th>
         <th class="tableActionMonstre">Action</th>
       </tr>
     </thead>
     <tbody>
-      <?php foreach(listeMonstre() as $key => $value){ ?>
+      <?php foreach(statsMonstre() as $key => $value){ ?>
         <tr>
           <th><?= $value['id'] ?></th>
-          <th><?= $value['Nom'] ?></th>
-          <td><?= $value['Description'] ?></td>
+          <th><?= $value['id_stats'] ?></th>
+          <td><?= $value['valeur'] ?></td>
           <th>
-            <a href="/?page=profil-monstre&id=<?= $value['id'] ?>" class="btn btn-secondary">Afficher</a>
-            <a href="/?page=modify-monstre&id=<?= $value['id'] ?>" class="btn btn-secondary">Modifier</a>
-            <a href="/?page=liste-monstreStats&id=<?= $value['id'] ?>&nom=<?= $value['Nom'] ?>" class="btn btn-secondary">Stats</a>
+            <a href="#" class="btn btn-secondary">Modifier</a>
             <form class="d-inline" action="" method="post">
               <input type="hidden" name="id" value="<?= $value['id'] ?>">
               <button class="btn btn-warning" type="submit" name="del">Supprimer</button>
@@ -35,5 +33,6 @@ if(isset($_POST['del'])) {
       </tr>
     </tbody>
   </table>
-  <a href="/?page=creer-Monstre" class="btn btn-secondary">Créer nouveau monstre</a>
+  <a href="/?page=creer-statsMonstre&id=<?= $_GET['id'] ?>&nom=<?= $_GET['nom'] ?>" class="btn btn-secondary">Assigner stats</a>
+  <a href="/?page=liste-monstre" class="btn btn-secondary">Retour liste</a>
 </div>

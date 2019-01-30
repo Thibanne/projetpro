@@ -7,7 +7,7 @@ if(isset($_POST['del'])) {
 }
 ?>
 <div class="col align-self-center">
-  <table class="table table-striped">
+  <table class="table table-striped listTableBackground">
     <thead>
       <tr>
         <th>Id</th>
