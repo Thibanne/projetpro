@@ -7,6 +7,8 @@ if(isset($_POST['del'])) {
 }
 ?>
 <div class="col align-self-center">
+  <a href="/?page=creer-statsMonstre&id=<?= $_GET['id'] ?>&nom=<?= $_GET['nom'] ?>" class="btn btn-secondary">Assigner stats</a>
+  <a href="/?page=liste-monstre" class="btn btn-secondary">Retour liste</a>
   <table class="table table-striped listTableBackground">
     <thead>
       <tr>
@@ -19,9 +21,9 @@ if(isset($_POST['del'])) {
     <tbody>
       <?php foreach(statsMonstre() as $key => $value){ ?>
         <tr>
-          <th><?= $value['id'] ?></th>
-          <th><?= $value['id_stats'] ?></th>
-          <td><?= $value['valeur'] ?></td>
+          <th><?= $value['idStatsMonstre'] ?></th>
+          <th><?= $value['nomStats'] ?></th>
+          <td><?= $value['valeurStatsMonstre'] ?></td>
           <th>
             <a href="#" class="btn btn-secondary">Modifier</a>
             <form class="d-inline" action="" method="post">
@@ -33,6 +35,4 @@ if(isset($_POST['del'])) {
       </tr>
     </tbody>
   </table>
-  <a href="/?page=creer-statsMonstre&id=<?= $_GET['id'] ?>&nom=<?= $_GET['nom'] ?>" class="btn btn-secondary">Assigner stats</a>
-  <a href="/?page=liste-monstre" class="btn btn-secondary">Retour liste</a>
 </div>

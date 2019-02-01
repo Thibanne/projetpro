@@ -63,45 +63,61 @@ if(isset($_GET['logout'])){
         }else if($_GET['page'] == 'histoire'){
           require urlhistoire.'couverture.php';
         }
-        // Liste
-        else if($_GET['page'] == 'liste-monstre'){
-          require urlAdminListe.'listeMonstre.php';
-        }else if($_GET['page'] == 'liste-monstreStats'){
-          require urlAdminListe.'listeMonstreStats.php';
-        }else if($_GET['page'] == 'liste-stats'){
-          require urlAdminListe.'listeStats.php';
-        }else if($_GET['page'] == 'liste-technique'){
-          require urlAdminListe.'listeTechnique.php';
-        }
-        // Profil
-        else if($_GET['page'] == 'profil-monstre'){
-          require urlAdminProfil.'profilMonstre.php';
-        }else if($_GET['page'] == 'profil-technique'){
-          require urlAdminProfil.'profilTechnique.php';
-        }
-        // Créer
-        else if($_GET['page'] == 'creer-stats'){
-          require urlAdminCreer.'formCreateStats.php';
-        }else if($_GET['page'] == 'creer-technique'){
-          require urlAdminCreer.'formCreateTechnique.php';
-        }else if($_GET['page'] == 'creer-statsTech'){
-          require urlAdminCreer.'createStatsTech.php';
-        }else if($_GET['page'] == 'creer-techjoueur'){
-          require urlAdminCreer.'createTechJoueur.php';
-        }else if($_GET['page'] == 'creer-techmonstre'){
-          require urlAdminCreer.'createTechMonstre.php';
-        }else if($_GET['page'] == 'creer-Monstre'){
-          require urlAdminCreer.'formCreateMonstre.php';
-        }else if($_GET['page'] == 'creer-statsMonstre'){
-          require urlAdminCreer.'createStatsMonstre.php';
-        }
-        // Modifier
-        else if($_GET['page'] == 'modify-technique'){
-          require urlAdminModifier.'formModTechnique.php';
+        // Joueur
+          //urlAdminJoueur
+        // Monstre
+        else if($_GET['page'] == 'creer-monstre'){
+          require urlAdminMonstre.'formCreateMonstre.php';
         }else if($_GET['page'] == 'modify-monstre'){
-          require urlAdminModifier.'formModMonstre.php';
+          require urlAdminMonstre.'formModMonstre.php';
+        }else if($_GET['page'] == 'liste-monstre'){
+          require urlAdminMonstre.'listeMonstre.php';
+        }else if($_GET['page'] == 'profil-monstre'){
+          require urlAdminMonstre.'profilMonstre.php';
+        }
+        // Role
+          //urlAdminRole
+        // Stats
+        else if($_GET['page'] == 'creer-stats'){
+          require urlAdminStats.'formCreateStats.php';
         }else if($_GET['page'] == 'modify-stats'){
-          require urlAdminModifier.'formModStats.php';
+          require urlAdminStats.'formModStats.php';
+        }else if($_GET['page'] == 'liste-stats'){
+          require urlAdminStats.'listeStats.php';
+        }
+        // StatsJoueur
+        else if($_GET['page'] == 'creer-statsJoueur'){
+          require urlAdminStatsJoueur.'createStatsJoueur.php';
+        }
+        // StatsMonstre
+        else if($_GET['page'] == 'creer-statsMonstre'){
+          require urlAdminStatsMonstre.'createStatsMonstre.php';
+        }else if($_GET['page'] == 'liste-monstreStats'){
+          require urlAdminStatsMonstre.'listeMonstreStats.php';
+        }
+        // StatsTechnique
+        else if($_GET['page'] == 'creer-statsTechnique'){
+          require urlAdminStatsTech.'createStatsTech.php';
+        }else if($_GET['page'] == 'modify-statsTech'){
+          require urlAdminStatsTech.'formModStatsTech.php';
+        }else if($_GET['page'] == 'liste-techniqueStats'){
+          require urlAdminStatsTech.'listeTechniqueStats.php';
+        }
+        // TechniqueJoueur
+        else if($_GET['page'] == 'creer-techJoueur'){
+          require urlAdminTechJoueur.'createTechJoueur.php';
+        }
+        // TechniqueMonstre
+        else if($_GET['page'] == 'creer-techMonstre'){
+          require urlAdminTechMonstre.'createTechMonstre.php';
+        }
+        // Technique
+        else if($_GET['page'] == 'creer-technique'){
+          require urlAdminTechnique.'formCreateTechnique.php';
+        }else if($_GET['page'] == 'modify-technique'){
+          require urlAdminTechnique.'formModTechnique.php';
+        }else if($_GET['page'] == 'liste-technique'){
+          require urlAdminTechnique.'listeTechnique.php';
         }
       }else{
         require 'combat/liste_monstre.php';

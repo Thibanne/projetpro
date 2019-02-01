@@ -60,6 +60,9 @@ a{
 .modal-header{
   background-color: black;
 }
+.modalConnect{
+  padding-right: 0;
+}
 #connectModal .modal-content{
   border: white 1px solid;
   background-image: url('../img/fondFormInsc.gif');

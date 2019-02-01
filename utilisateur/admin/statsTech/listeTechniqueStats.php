@@ -1,5 +1,6 @@
 <?php
 $connect = con();
+
 if(isset($_GET['id'])){
   // Degats
   $sql = "SELECT
@@ -27,6 +28,8 @@ if(isset($_GET['id'])){
   $tableTechProfilCout = $result->fetch_all(MYSQLI_ASSOC);
   ?>
   <div class="TableTechCentralAlign">
+    <a href="/?page=creer-statsTechnique&id=<?= $_GET['id'] ?>&nom=<?= $_GET['nom'] ?>" class="btn btn-secondary">Assigner stats</a>
+    <a href="/?page=liste-technique" class="btn btn-secondary">Retour liste</a>
     <table class="table listTableBackground tableTechProfilAssoc">
       <thead>
         <tr>
@@ -78,5 +81,5 @@ if(isset($_GET['id'])){
       </table>
     </div>
   <?php } ?>
-  <a href="/?page=liste-technique" class="btn btn-secondary">Retour liste</a>
+  <a href="#" class="btn btn-secondary">Modifier</a>
 </div>

@@ -18,8 +18,8 @@
           <a class="dropdown-item" href="/?page=liste-stats">stats</a>
           <a class="dropdown-item" href="/?page=liste-technique">technique</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/?page=creer-techjoueur">technique pour un joueur</a>
-          <a class="dropdown-item" href="/?page=creer-techmonstre">technique pour un monstre</a>
+          <a class="dropdown-item" href="/?page=creer-techJoueur">technique pour un joueur</a>
+          <a class="dropdown-item" href="/?page=creer-techMonstre">technique pour un monstre</a>
         </div>
       </li>
       <li class="nav-item active">
@@ -40,13 +40,13 @@
                 </div>
                 <div class="modal-body">
                   <div class="row">
-                    <div class="col">
+                    <div class="col modalConnect">
                       <?php
                       require 'utilisateur/inscriptionForm.php';
                       ?>
                     </div>
                     <hr>
-                    <div class="col">
+                    <div class="col modalConnect">
                       <?php
                       require 'utilisateur/connectionForm.php';
                       ?>

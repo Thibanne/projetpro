@@ -7,6 +7,7 @@ if(isset($_POST['del'])) {
 }
 ?>
 <div class="col align-self-center">
+  <a href="/?page=creer-stats" class="btn btn-secondary">Créer nouvelle statistique</a>
   <table class="table table-striped listTableBackground">
     <thead>
       <tr>
@@ -39,5 +40,4 @@ if(isset($_POST['del'])) {
       </tr>
     </tbody>
   </table>
-  <a href="/?page=creer-stats" class="btn btn-secondary">Créer nouvelle statistique</a>
 </div>
