@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:3306
--- Généré le :  Mer 30 Janvier 2019 à 12:27
+-- Généré le :  Lun 04 Février 2019 à 08:48
 -- Version du serveur :  5.7.25-0ubuntu0.18.04.2
 -- Version de PHP :  7.2.10-0ubuntu0.18.04.1
 
@@ -107,8 +107,7 @@ INSERT INTO `Monstre` (`id`, `Nom`, `Description`) VALUES
 (2, 'Orc', 'Grandes créatures à la peau verte sont réputés pour leur dévotion au combat et à la guerre'),
 (3, 'Hobgoblin', 'Ressemblant au Gobelin, mais plus grand et plus intélligent'),
 (4, 'Ogre', 'Grands êtres brutaux, à la capacité d’élocution et à l’intelligence limitées'),
-(5, 'Votre ombre', 'Créature malfaisante représentant la part d\'ombre de chacun'),
-(6, 'test', 'monstre de test');
+(5, 'Votre ombre', 'Créature malfaisante représentant la part d\'ombre de chacun');
 
 -- --------------------------------------------------------
 
@@ -129,6 +128,53 @@ INSERT INTO `Stats` (`id`, `Nom`) VALUES
 (1, 'PV'),
 (2, 'mana'),
 (3, 'stun');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `StatsMonstre`
+--
+
+CREATE TABLE `StatsMonstre` (
+  `id` int(11) NOT NULL,
+  `id_monstre` int(11) NOT NULL,
+  `id_stats` int(11) NOT NULL,
+  `valeur` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Contenu de la table `StatsMonstre`
+--
+
+INSERT INTO `StatsMonstre` (`id`, `id_monstre`, `id_stats`, `valeur`) VALUES
+(1, 1, 1, 50),
+(2, 1, 2, 0),
+(3, 1, 3, 0),
+(4, 2, 1, 75),
+(5, 2, 2, 20),
+(6, 2, 3, 0),
+(7, 3, 1, 75),
+(8, 3, 2, 20),
+(9, 3, 3, 0),
+(10, 4, 1, 150),
+(11, 4, 2, 10),
+(12, 4, 3, 0),
+(13, 5, 1, 200),
+(14, 5, 2, 100),
+(15, 5, 3, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `StatsUtilisateur`
+--
+
+CREATE TABLE `StatsUtilisateur` (
+  `id` int(11) NOT NULL,
+  `id_utilisateur` int(11) NOT NULL,
+  `valeur` int(11) NOT NULL,
+  `id_stats` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -270,6 +316,18 @@ ALTER TABLE `Stats`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `StatsMonstre`
+--
+ALTER TABLE `StatsMonstre`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `StatsUtilisateur`
+--
+ALTER TABLE `StatsUtilisateur`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `Technique`
 --
 ALTER TABLE `Technique`
@@ -311,12 +369,22 @@ ALTER TABLE `DegatTechnique`
 -- AUTO_INCREMENT pour la table `Monstre`
 --
 ALTER TABLE `Monstre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `Stats`
 --
 ALTER TABLE `Stats`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT pour la table `StatsMonstre`
+--
+ALTER TABLE `StatsMonstre`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+--
+-- AUTO_INCREMENT pour la table `StatsUtilisateur`
+--
+ALTER TABLE `StatsUtilisateur`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `Technique`
 --

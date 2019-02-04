@@ -49,6 +49,8 @@ if(isset($_GET['logout'])){
         <?php
         if(isset($_GET['page']) && $_GET['page'] != 'combat'){
           require 'site/navbar.php';
+        }else if(isset($_GET['page']) && $_GET['page'] != 'histoire'){
+          require 'site/navbar.php';
         }else if(!isset($_GET['page'])){
           require 'site/navbar.php';
         }

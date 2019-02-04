@@ -4,3 +4,30 @@
   height: 100%;
   width: 100%;
 }
+#Boussole {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10%;
+  height: 20%;
+}
+#LeaveStory {
+  color: white;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  font-size: 1.3rem;
+  bottom: 1.7rem;
+  right: 1.3rem;
+  text-align: center;
+  text-shadow: 1px 0 0 #000,
+                1px 1px 0 #000,
+                0 1px 0 #000,
+                -1px 1px 0 #000,
+                -1px 0 0 #000,
+                -1px -1px 0 #000,
+                0 -1px 0 #000,
+                1px -1px 0 #000;
+}
