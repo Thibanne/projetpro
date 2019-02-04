@@ -7,7 +7,7 @@ if(isset($_POST['del'])) {
 }
 ?>
 <div class="col align-self-center">
-  <a href="/?page=creer-Monstre" class="btn btn-secondary">Créer nouveau monstre</a>
+  <a href="/?page=creer-monstre" class="btn btn-secondary">Créer nouveau monstre</a>
   <table class="table table-striped listTableBackground">
     <thead>
       <tr>
@@ -24,8 +24,8 @@ if(isset($_POST['del'])) {
           <th><?= $value['Nom'] ?></th>
           <td><?= $value['Description'] ?></td>
           <th>
-            <a href="/?page=profil-monstre&id=<?= $value['id'] ?>" class="btn btn-secondary">Afficher</a>
             <a href="/?page=modify-monstre&id=<?= $value['id'] ?>" class="btn btn-secondary">Modifier</a>
+            <a href="/?page=liste-techMonstre&id=<?= $value['id'] ?>" class="btn btn-secondary">Technique</a>
             <a href="/?page=liste-monstreStats&id=<?= $value['id'] ?>&nom=<?= $value['Nom'] ?>" class="btn btn-secondary">Stats</a>
             <form class="d-inline" action="" method="post">
               <input type="hidden" name="id" value="<?= $value['id'] ?>">
@@ -35,5 +35,5 @@ if(isset($_POST['del'])) {
         <?php } ?>
       </tr>
     </tbody>
-  </table>  
+  </table>
 </div>

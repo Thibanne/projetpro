@@ -1,8 +1,23 @@
-#worldmap {
-  background-image: url('../img/worldmap.png');
-  background-size: 100% 100%;
+body{
+  overflow: hidden;
+}
+.black {
+  background-color: #000;
   height: 100%;
   width: 100%;
+}
+.worldmap-container{
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+  border: 5px solid red;
+}
+.draggable{
+
+}
+#worldmap {
+  /* transform: scale(1.2, 1.2); */
+  width: 2000px;
 }
 #Boussole {
   margin: 0;

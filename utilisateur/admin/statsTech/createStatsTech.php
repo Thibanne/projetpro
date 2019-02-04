@@ -48,5 +48,5 @@ if (isset($_POST['createStatsTech'])) {
     </div>
     <input class="btn btn-secondary" type="submit" id="bouton" name="createStatsTech" value="Créé" disabled />
   </form>
-  <a href="/?page=liste-technique" class="btn btn-secondary">Retour liste</a>
+  <a href="/?page=liste-techniqueStats&id=<?= $_GET['id'] ?>&nom=<?= $_GET['nom'] ?>" class="btn btn-secondary">Retour</a>
 </div>

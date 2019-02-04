@@ -20,6 +20,9 @@ if(isset($_GET['logout'])){
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous" />
+  <link rel="stylesheet" href="assets/css/jquery-ui" />
+  <link rel="stylesheet" href="assets/css/jquery-ui-structure" />
+  <link rel="stylesheet" href="assets/css/jquery-ui-theme" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <?php
   if(isset($_GET['page'])){
@@ -47,9 +50,7 @@ if(isset($_GET['logout'])){
     <div class="row justify-content-between">
       <div class="offset-2">
         <?php
-        if(isset($_GET['page']) && $_GET['page'] != 'combat'){
-          require 'site/navbar.php';
-        }else if(isset($_GET['page']) && $_GET['page'] != 'histoire'){
+        if(isset($_GET['page']) && $_GET['page'] != 'combat' && $_GET['page'] != 'histoire'){
           require 'site/navbar.php';
         }else if(!isset($_GET['page'])){
           require 'site/navbar.php';
@@ -74,8 +75,6 @@ if(isset($_GET['logout'])){
           require urlAdminMonstre.'formModMonstre.php';
         }else if($_GET['page'] == 'liste-monstre'){
           require urlAdminMonstre.'listeMonstre.php';
-        }else if($_GET['page'] == 'profil-monstre'){
-          require urlAdminMonstre.'profilMonstre.php';
         }
         // Role
           //urlAdminRole
@@ -96,12 +95,16 @@ if(isset($_GET['logout'])){
           require urlAdminStatsMonstre.'createStatsMonstre.php';
         }else if($_GET['page'] == 'liste-monstreStats'){
           require urlAdminStatsMonstre.'listeMonstreStats.php';
+        }else if($_GET['page'] == 'modify-statsMonstre'){
+          require urlAdminStatsMonstre.'formModStatsMonstre.php';
         }
         // StatsTechnique
         else if($_GET['page'] == 'creer-statsTechnique'){
           require urlAdminStatsTech.'createStatsTech.php';
-        }else if($_GET['page'] == 'modify-statsTech'){
-          require urlAdminStatsTech.'formModStatsTech.php';
+        }else if($_GET['page'] == 'modify-statsTechDegat'){
+          require urlAdminStatsTech.'formModStatsTechDegat.php';
+        }else if($_GET['page'] == 'modify-statsTechCout'){
+          require urlAdminStatsTech.'formModStatsTechCout.php';
         }else if($_GET['page'] == 'liste-techniqueStats'){
           require urlAdminStatsTech.'listeTechniqueStats.php';
         }
@@ -112,6 +115,8 @@ if(isset($_GET['logout'])){
         // TechniqueMonstre
         else if($_GET['page'] == 'creer-techMonstre'){
           require urlAdminTechMonstre.'createTechMonstre.php';
+        }else if($_GET['page'] == 'liste-techMonstre'){
+          require urlAdminTechMonstre.'listeTechMonstre.php';
         }
         // Technique
         else if($_GET['page'] == 'creer-technique'){
@@ -130,6 +135,7 @@ if(isset($_GET['logout'])){
     }
     ?>
     <script src="assets/js/jquery-3.3.1.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="assets/js/fonction.js"></script>
@@ -175,6 +181,25 @@ if(isset($_GET['logout'])){
     $_SESSION['tempMana'] = playerManaPercent();
     $_SESSION['tempPVMonstre'] = monsterPVPercent();
     } ?>
+    </script>
+    <script>
+      $( function() {
+        WinWidth = $(document).width();
+        WinHeight = $(document).height();
+        $( "#worldmap" ).draggable({
+          drag: function(){
+            posXleft = Number(parseInt($(this).css("left")));
+            posXright = posXleft+Number(parseInt($(this).css("width")));
+            posYtop = Number(parseInt($(this).css("top")));
+            posYbottom = posYtop+Number(parseInt($(this).css("height")));
+            $('#debbug-worldmap').text($(this).css('left'));
+            var posXL = parseInt($(this).css('left'));
+            if( posXL < 0){
+              $(this).css({left: "-=1"});
+            }
+          }
+        })
+      } );
     </script>
 
   </body>

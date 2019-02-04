@@ -18,8 +18,7 @@
           <a class="dropdown-item" href="/?page=liste-stats">stats</a>
           <a class="dropdown-item" href="/?page=liste-technique">technique</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/?page=creer-techJoueur">technique pour un joueur</a>
-          <a class="dropdown-item" href="/?page=creer-techMonstre">technique pour un monstre</a>
+          <a class="dropdown-item" href="/?page=creer-techJoueur">technique pour un joueur</a>          
         </div>
       </li>
       <li class="nav-item active">

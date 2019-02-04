@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:3306
--- Généré le :  Lun 04 Février 2019 à 08:48
+-- Généré le :  Lun 04 Février 2019 à 16:53
 -- Version du serveur :  5.7.25-0ubuntu0.18.04.2
 -- Version de PHP :  7.2.10-0ubuntu0.18.04.1
 
@@ -69,7 +69,7 @@ CREATE TABLE `DegatTechnique` (
 --
 
 INSERT INTO `DegatTechnique` (`id`, `Valeur`, `id_stats`, `id_technique`) VALUES
-(1, -10, 1, 1),
+(1, 10, 1, 1),
 (2, -20, 1, 2),
 (3, -10, 1, 3),
 (4, 1, 3, 3),
@@ -232,7 +232,6 @@ INSERT INTO `TechniqueMonstre` (`id`, `id_technique`, `id_monstre`) VALUES
 (5, 12, 4),
 (6, 8, 2),
 (7, 9, 2),
-(8, 11, 3),
 (9, 13, 4),
 (10, 14, 4),
 (11, 2, 5),
@@ -394,7 +393,7 @@ ALTER TABLE `Technique`
 -- AUTO_INCREMENT pour la table `TechniqueMonstre`
 --
 ALTER TABLE `TechniqueMonstre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT pour la table `TechniqueUtilisateur`
 --
