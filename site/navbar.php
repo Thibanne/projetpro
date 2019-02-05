@@ -18,7 +18,7 @@
           <a class="dropdown-item" href="/?page=liste-stats">stats</a>
           <a class="dropdown-item" href="/?page=liste-technique">technique</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/?page=creer-techJoueur">technique pour un joueur</a>          
+          <a class="dropdown-item" href="/?page=creer-techJoueur">technique pour un joueur</a>
         </div>
       </li>
       <li class="nav-item active">
@@ -40,14 +40,12 @@
                 <div class="modal-body">
                   <div class="row">
                     <div class="col modalConnect">
-                      <?php
-                      require 'utilisateur/inscriptionForm.php';
-                      ?>
-                    </div>
-                    <hr>
-                    <div class="col modalConnect">
-                      <?php
-                      require 'utilisateur/connectionForm.php';
+                    <?php
+                      if(!isset($_POST['newOne']) || isset($_POST['oldOne'])){
+                        require 'utilisateur/connectionForm.php';
+                      }else if(isset($_POST['newOne'])){
+                        require 'utilisateur/inscriptionForm.php';
+                      }
                       ?>
                     </div>
                   </div>

@@ -48,3 +48,6 @@ require 'app/regexform.php';
   </div>
   <button class="btn btn-light" type="submit" name="inscription">Validé</button>
 </form>
+<form class="" action="?modal" method="post">
+  <button class="btn btn-light" type="submit" name="oldOne">Déjâ inscript ?</button>
+</form>

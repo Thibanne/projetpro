@@ -25,7 +25,7 @@ if(isset($_POST['del'])) {
           <td><?= $value['Description'] ?></td>
           <th>
             <a href="/?page=modify-monstre&id=<?= $value['id'] ?>" class="btn btn-secondary">Modifier</a>
-            <a href="/?page=liste-techMonstre&id=<?= $value['id'] ?>" class="btn btn-secondary">Technique</a>
+            <a href="/?page=liste-techMonstre&id=<?= $value['id'] ?>&nom=<?= $value['Nom'] ?>" class="btn btn-secondary">Technique</a>
             <a href="/?page=liste-monstreStats&id=<?= $value['id'] ?>&nom=<?= $value['Nom'] ?>" class="btn btn-secondary">Stats</a>
             <form class="d-inline" action="" method="post">
               <input type="hidden" name="id" value="<?= $value['id'] ?>">

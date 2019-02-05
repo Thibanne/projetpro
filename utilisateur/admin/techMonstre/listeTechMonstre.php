@@ -24,7 +24,7 @@ if(isset($_GET['id'])){
     <table class="table table-striped listTableBackground">
       <thead>
         <tr>
-          <th>Technique(s) de <?= $tableTechMonstre['0']['Monstrenom'] ?></th>
+          <th>Technique(s) de <?= $_GET['nom'] ?></th>
           <th class="tableActionMonstre">Action</th>
         </tr>
       </thead>

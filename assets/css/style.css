@@ -63,6 +63,19 @@ a{
 .modalConnect{
   padding-right: 0;
 }
+.textLikeLink{
+  padding: 0;
+  color: #00edff;
+}
+.btnResize{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 96.5%;
+}
+.btn-link:hover.textLikeLink{
+  color: #a579f9;
+  text-decoration: none;
+}
 #connectModal .modal-content{
   border: white 1px solid;
   background-image: url('../img/fondFormInsc.gif');

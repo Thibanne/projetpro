@@ -1,23 +1,17 @@
 body{
   overflow: hidden;
 }
-.black {
+.worldmap-container{
   background-color: #000;
   height: 100%;
   width: 100%;
-}
-.worldmap-container{
-  height: 300px;
-  width: 300px;
   overflow: hidden;
-  border: 5px solid red;
 }
-.draggable{
-
+#mapHighres{
+  display: none;
 }
-#worldmap {
-  /* transform: scale(1.2, 1.2); */
-  width: 2000px;
+.worldmap {
+  width: auto;
 }
 #Boussole {
   margin: 0;
@@ -26,7 +20,7 @@ body{
   bottom: 0;
   right: 0;
   width: 10%;
-  height: 20%;
+  height: auto;
 }
 #LeaveStory {
   color: white;
@@ -34,8 +28,8 @@ body{
   padding: 0;
   position: absolute;
   font-size: 1.3rem;
-  bottom: 1.7rem;
-  right: 1.3rem;
+  bottom: 2.3rem;
+  right: 1.2rem;
   text-align: center;
   text-shadow: 1px 0 0 #000,
                 1px 1px 0 #000,
@@ -45,4 +39,5 @@ body{
                 -1px -1px 0 #000,
                 0 -1px 0 #000,
                 1px -1px 0 #000;
+  text-decoration: none;
 }

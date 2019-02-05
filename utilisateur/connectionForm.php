@@ -28,17 +28,23 @@ if (isset($_POST['connection'])) {
   $connect->close();
 }
 
-
 ?>
 <!-- formulaire de connection -->
 <form class="" action="?modal" method="post">
-  <div class="">
-    <label for="">Pseudo</label>
-    <input type="text" name="login" value="" />
+  <div class="form-row">
+    <div class="col">
+      <label for="">Pseudo</label>
+      <input type="text" name="login" value="" />
+    </div>
+    <div class="col">
+      <label for="">Mot de passe<?php if (isset($error['password'])) { ?> <span class="error"><?= $error['password']; ?></span><?php } ?></label>
+      <input type="text" name="password" value="" />
+    </div>
   </div>
-  <div class="">
-    <label for="">Mot de passe<?php if (isset($error['password'])) { ?> <span class="error"><?= $error['password']; ?></span><?php } ?></label>
-    <input type="text" name="password" value="" />
-  </div>
-  <button class="btn btn-light" type="submit" name="connection">Connection</button>
+  <button class="btn btn-light btnResize" type="submit" name="connection">Connection</button>
+</form>
+<form class="" action="?modal" method="post">
+  <span>Pas encore inscrit ?</span>
+  <button class="btn btn-link textLikeLink" type="submit" name="newOne">Cliquez ici</button>
+  <span>.</span>
 </form>
