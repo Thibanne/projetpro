@@ -13,6 +13,9 @@ body{
 .worldmap {
   width: auto;
 }
+#worldmap2{
+  display: none;
+}
 #Boussole {
   margin: 0;
   padding: 0;

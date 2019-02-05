@@ -284,10 +284,10 @@ if(isset($_GET['logout'])){
     </script>
     <script>
       $( function(){
-        mapHighres.onload = function(){
-          // mapHighres.style.display = 'inline';
-          // mapLowres.style.display = 'none';
-          alert('marche ?');
+        $(".worldmap-image").append('<img id="worldmap2" src="../assets/img/worldmap.png" alt="map en haute qualité">')
+        worldmap2.onload = function(){
+          $("#worldmap").attr("src", "../assets/img/worldmap.png");
+          $("#worldmap2").remove();
         };
       });
     </script>
