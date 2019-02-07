@@ -16,7 +16,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/?page=liste-monstre">monstre</a>
           <a class="dropdown-item" href="/?page=liste-stats">stats</a>
-          <a class="dropdown-item" href="/?page=liste-technique">technique</a>
+          <a class="dropdown-item" href="/?page=liste-technique&section=1">technique</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="/?page=creer-techJoueur">technique pour un joueur</a>
         </div>

@@ -8,6 +8,9 @@ if(isset($_POST['del'])) {
 ?>
 <div class="col align-self-center">
   <a href="/?page=creer-technique" class="btn btn-secondary">Créer nouvelle technique</a>
+  <?php for ($i=1; $i < sectionTech()+1 ; $i++) { ?>
+    <a href="/?page=liste-technique&section=<?= $i ?>" class="btn btn-info"><?= $i ?></a>
+  <?php } ?>
   <table class="table table-striped listTableBackground">
     <thead>
       <tr>
@@ -35,4 +38,6 @@ if(isset($_POST['del'])) {
       <?php } ?>
     </tbody>
   </table>
-</div>
+  <?php for ($i=1; $i < sectionTech()+1 ; $i++) { ?>
+    <a href="/?page=liste-technique&section=<?= $i ?>" class="btn btn-info"><?= $i ?></a>
+  <?php } ?>

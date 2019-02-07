@@ -1,11 +1,21 @@
 <?php
 
+function sectionTech(){
+  $connect = con();
+  $sql = "SELECT COUNT(*) AS 'totalRow' FROM `Technique`";
+  $result = $connect->query($sql);
+  $compteurPageTech = $result->fetch_array(MYSQLI_ASSOC);
+  $compteurPageTech = ceil($compteurPageTech['totalRow']/5);
+  return $compteurPageTech;
+}
+
 function listeTech(){
   $connect = con();
-  $sql = "SELECT * FROM `Technique`";
+  $limitViewTech = floor(($_GET['section']-1)*5);
+  $sql = "SELECT * FROM `Technique` LIMIT $limitViewTech, 5";
   $result = $connect->query($sql);
-  $tableTech = $result->fetch_all(MYSQLI_ASSOC);
-  return $tableTech;
+  $limitViewTech = $result->fetch_all(MYSQLI_ASSOC);
+  return $limitViewTech;
 }
 
 ?>

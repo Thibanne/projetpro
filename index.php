@@ -165,6 +165,7 @@ if(isset($_GET['logout'])){
           if (text.length > 0) {
 
             var next = text.substr(0,1); // on récupère le caractère
+            next = next.replace("\n", '<br />')
 
             // on enlève le caractère pour garder uniquement le reste
             text = text.substr(1);
@@ -185,8 +186,8 @@ if(isset($_GET['logout'])){
         caract(this, $(this).html(), '');
 
       }
-
-      $("#ecrire").machineEcrire({ 'delai' : 100 });
+      $(".lieu").fadeIn();
+      $("#ecrire p").machineEcrire({ 'delai' : 20 });
       </script>
       <!-- modals -->
       <script>
