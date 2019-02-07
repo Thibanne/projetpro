@@ -7,11 +7,16 @@ body{
   width: 100%;
   overflow: hidden;
 }
-#mapHighres{
-  display: none;
+#worldmap-div{
+  width: 250%;
+  height: auto;
+  overflow: hidden;
 }
-.worldmap {
-  width: auto;
+#worldmap-img {
+  position: relative;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
 }
 #worldmap2{
   display: none;
@@ -43,4 +48,16 @@ body{
                 0 -1px 0 #000,
                 1px -1px 0 #000;
   text-decoration: none;
+}
+.worldmap-container #worldmap-div #worldmap-img{
+  height: 100%;
+  width: 100%;
+}
+.worldmap-container #worldmap-div button {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  border-radius: 100%;
+  padding-top: -5px;
+  padding-bottom: -5px;
 }

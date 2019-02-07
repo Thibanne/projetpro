@@ -23,4 +23,20 @@ function statsMonstre(){
   $tableMonstre = $result->fetch_all(MYSQLI_ASSOC);
   return $tableMonstre;
 }
+
+function showMonstre($id){
+  $connect = con();
+  $sql = "SELECT
+    Stats.Nom,
+    StatsMonstre.valeur
+  FROM `Monstre`
+  LEFT JOIN StatsMonstre ON Monstre.id=StatsMonstre.id_monstre
+  LEFT JOIN Stats ON StatsMonstre.id_stats=Stats.id
+  WHERE Monstre.id = '$id'";
+  $result = $connect->query($sql);
+  $tableMonstre = $result->fetch_all(MYSQLI_ASSOC);
+  return $tableMonstre;
+}
+
+
 ?>

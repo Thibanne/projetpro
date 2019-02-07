@@ -89,12 +89,9 @@ a{
   background-color: black;
 }
 #listMonstre{
-  margin-top: 3rem;
+  flex-basis: auto;
 }
-.listingBattleMonster{
-  margin-left: 10rem;
-}
-.listingBattleMonster input{
+#listMonstre input{
   max-width: 120px;
 }
 #jdc{
