@@ -1,0 +1,51 @@
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+body{
+  background-color: #000;
+  text-transform: uppercase;
+}
+#back404{
+  background-image: url('http://stixdev.com/images/404-2.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+  width: 949px;
+  height: 855px;
+}
+.texte-font{
+  font-family: 'Press Start 2P', cursive;
+  text-align: left;
+  position: relative;
+  text-shadow: 3px 3px 0px #2038ec;
+  color: #fff;
+  font-weight: 400;
+}
+#bubble{
+  font-size: 1.7em;
+  width: 400px;
+  top: 100px;
+  line-height: 60px;
+  padding-left: 196px;
+  margin-left: 260px;
+}
+#nom{
+  top: 26px;
+  width: 150px;
+  font-size: 1.6em;
+  z-index: 1;
+  margin-left: 400px;
+}
+#nom a{
+  color: #fff;
+  text-decoration: none;
+  margin-left: 281px;
+  width: 200px;
+}#nom a:hover{
+  text-shadow: 3px 3px 0px #d82800;
+}
+#pnf{
+  margin-left: 125px;
+  margin-top: -27px;
+  width: 400px;
+  font-size: 1.5em;
+}

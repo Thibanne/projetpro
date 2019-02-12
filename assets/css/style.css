@@ -6,6 +6,7 @@ html, body, #body{
 }
 body {
   background-image: url('../img/campfire.gif');
+  background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;

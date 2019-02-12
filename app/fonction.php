@@ -76,12 +76,20 @@ function autoRequireModele(){
   return $modelesFiles;
 }
 
-function findGetPage($tableStrPage){ 
+function findGetPage($tableStrPage){
   foreach ($tableStrPage as $key => $value) {
     if(strpos($_GET['page'], $value) !== false){
       return true;
     }
   }
   return false;
+}
+
+function mp3($id, $music){
+  ?>
+    <audio autoplay loop>
+      <source id="<?= $id ?>" src="assets/musique/<?= $music ?>" type="audio/mpeg">
+    </audio>
+  <?php
 }
 ?>
