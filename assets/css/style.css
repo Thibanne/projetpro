@@ -144,6 +144,29 @@ table.tableTechProfilAssoc {
   overflow-y: auto;
   display: none;
 }
+.btnStory{
+  margin: 0;
+  color: white;
+  text-decoration: none;
+  background-color: #000A;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-shadow: 0 0 10px black;
+  height: 100%;
+  overflow-y: auto;
+  display: none;
+}
+.btnStory:hover{
+  color: white;
+  text-decoration: none;
+}
 .lieu p{
   margin: 0;
+}
+.whoTalk {
+  display: none;
+  position: absolute;
+  top: 10%;
+  left: 75%;
 }

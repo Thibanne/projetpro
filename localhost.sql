@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:3306
--- Généré le :  Lun 04 Février 2019 à 16:53
+-- Généré le :  Mar 12 Février 2019 à 16:57
 -- Version du serveur :  5.7.25-0ubuntu0.18.04.2
 -- Version de PHP :  7.2.10-0ubuntu0.18.04.1
 
@@ -49,7 +49,11 @@ INSERT INTO `CoutTechnique` (`id`, `Valeur`, `id_stats`, `id_technique`) VALUES
 (7, -5, 2, 9),
 (8, -10, 2, 11),
 (9, -10, 2, 13),
-(10, -10, 2, 14);
+(10, -10, 2, 14),
+(11, 0, 2, 15),
+(12, 0, 2, 6),
+(13, 0, 2, 12),
+(14, 0, 2, 16);
 
 -- --------------------------------------------------------
 
@@ -84,7 +88,9 @@ INSERT INTO `DegatTechnique` (`id`, `Valeur`, `id_stats`, `id_technique`) VALUES
 (13, -15, 1, 12),
 (14, -30, 1, 13),
 (15, -25, 1, 14),
-(16, 1, 3, 14);
+(16, 1, 3, 14),
+(17, -10, 1, 15),
+(18, -1, 1, 16);
 
 -- --------------------------------------------------------
 
@@ -107,7 +113,8 @@ INSERT INTO `Monstre` (`id`, `Nom`, `Description`) VALUES
 (2, 'Orc', 'Grandes créatures à la peau verte sont réputés pour leur dévotion au combat et à la guerre'),
 (3, 'Hobgoblin', 'Ressemblant au Gobelin, mais plus grand et plus intélligent'),
 (4, 'Ogre', 'Grands êtres brutaux, à la capacité d’élocution et à l’intelligence limitées'),
-(5, 'Votre ombre', 'Créature malfaisante représentant la part d\'ombre de chacun');
+(5, 'Votre ombre', 'Créature malfaisante représentant la part d\'ombre de chacun'),
+(6, 'Nonoseau', 'Monstre Tuto');
 
 -- --------------------------------------------------------
 
@@ -161,7 +168,10 @@ INSERT INTO `StatsMonstre` (`id`, `id_monstre`, `id_stats`, `valeur`) VALUES
 (12, 4, 3, 0),
 (13, 5, 1, 200),
 (14, 5, 2, 100),
-(15, 5, 3, 0);
+(15, 5, 3, 0),
+(16, 6, 1, 25),
+(17, 6, 2, 0),
+(18, 6, 3, 0);
 
 -- --------------------------------------------------------
 
@@ -198,15 +208,15 @@ INSERT INTO `Technique` (`id`, `Nom`, `Description`) VALUES
 (3, 'Coup assomant', 'Inflige 10 points de dégats et assome pendant 1 tour pour 10 de mana.'),
 (4, 'Boule de feu', 'Inflige 30 points de dégats pour 20 de mana.'),
 (5, 'Soin', 'Soigne 20 points de vie pour 10 de mana.'),
-(6, 'Attaque', 'ATK Gobelin. 5dg'),
-(7, 'Attaque', 'ATK Orc. 5dg'),
+(6, 'Attaque', 'ATK 5dg'),
 (8, 'Coup bourrin', 'ATK Orc. 20dg/10mana'),
 (9, 'Grosse baffe', 'ATK Orc. 10dg/5mana'),
-(10, 'Attaque', 'ATK Hobgobelin. 5dg'),
 (11, 'Coup bas', 'ATK Hobgobelin. 30dg/10mana'),
-(12, 'Attaque', 'ATK Ogre. 15dg'),
+(12, 'Attaque', 'ATK 15dg'),
 (13, 'Martellage', 'ATK Ogre. 30dg/10mana'),
-(14, 'Plaquage', 'ATK Ogre. 25dg/1stun/10mana');
+(14, 'Plaquage', 'ATK Ogre. 25dg/1stun/10mana'),
+(15, 'Attaque', 'ATK 10dg'),
+(16, 'Attaque', 'ATK 1dg train');
 
 -- --------------------------------------------------------
 
@@ -227,8 +237,6 @@ CREATE TABLE `TechniqueMonstre` (
 INSERT INTO `TechniqueMonstre` (`id`, `id_technique`, `id_monstre`) VALUES
 (1, 1, 5),
 (2, 6, 1),
-(3, 7, 2),
-(4, 10, 3),
 (5, 12, 4),
 (6, 8, 2),
 (7, 9, 2),
@@ -237,7 +245,11 @@ INSERT INTO `TechniqueMonstre` (`id`, `id_technique`, `id_monstre`) VALUES
 (11, 2, 5),
 (12, 3, 5),
 (13, 4, 5),
-(14, 5, 5);
+(14, 5, 5),
+(15, 6, 2),
+(16, 15, 3),
+(17, 11, 3),
+(18, 16, 6);
 
 -- --------------------------------------------------------
 
@@ -336,7 +348,8 @@ ALTER TABLE `Technique`
 -- Index pour la table `TechniqueMonstre`
 --
 ALTER TABLE `TechniqueMonstre`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_monstre` (`id_monstre`);
 
 --
 -- Index pour la table `TechniqueUtilisateur`
@@ -358,17 +371,17 @@ ALTER TABLE `Utilisateur`
 -- AUTO_INCREMENT pour la table `CoutTechnique`
 --
 ALTER TABLE `CoutTechnique`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT pour la table `DegatTechnique`
 --
 ALTER TABLE `DegatTechnique`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT pour la table `Monstre`
 --
 ALTER TABLE `Monstre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT pour la table `Stats`
 --
@@ -378,7 +391,7 @@ ALTER TABLE `Stats`
 -- AUTO_INCREMENT pour la table `StatsMonstre`
 --
 ALTER TABLE `StatsMonstre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT pour la table `StatsUtilisateur`
 --
@@ -388,12 +401,12 @@ ALTER TABLE `StatsUtilisateur`
 -- AUTO_INCREMENT pour la table `Technique`
 --
 ALTER TABLE `Technique`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT pour la table `TechniqueMonstre`
 --
 ALTER TABLE `TechniqueMonstre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT pour la table `TechniqueUtilisateur`
 --

@@ -27,7 +27,7 @@
       <?php require 'utilisateur/logout.php'; ?>
       <?php }else{ ?>
         <li class="nav-item active">
-          <a class="nav-link" data-toggle="modal" data-target="#connectModal">Inscription/connection</a>        
+          <a class="btn btn-link nav-link" data-toggle="modal" data-target="#connectModal">Inscription/connection</a>        
         </li>
       <?php } ?>
     </ul>

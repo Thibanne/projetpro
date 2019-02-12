@@ -1,11 +1,11 @@
 <?php session_start();
+// Avec session_start() je récupère les données enregistré dans une valeur ID unique, ou j'en génère une vide
 require 'config.php';
 require 'app/fonction.php';
 $modelesFiles = autoRequireModele();
 foreach ($modelesFiles as $key => $value) {
   require 'app/'.$value;
 }
-// Avec session_start() je récupère les données enregistré dans une valeur ID unique, ou j'en génère une vide
 // je vérifie et je valide le formulaire de connection
 // S'il se deconnecte je vide la session
 if(isset($_GET['logout'])){
@@ -31,8 +31,10 @@ if(isset($_GET['logout'])){
       ?><link rel="stylesheet" href="assets/css/BDD.css" /><?php }
       if($_GET['page'] == 'histoire'){
         ?><link rel="stylesheet" href="assets/css/histoire.css" /><?php }
-        if($_GET['page'] == 'lieu-0'){
-          ?><link rel="stylesheet" href="assets/css/lieu0.css" /><?php }
+      if($_GET['page'] == 'lieu-0'){
+        ?><link rel="stylesheet" href="assets/css/lieu0.css" /><?php }
+      if($_GET['page'] == 'lieu-1'){
+        ?><link rel="stylesheet" href="assets/css/lieu1.css" /><?php }
           if($_GET['page'] == 'combat'){
             ?>
             <link rel="stylesheet" href="assets/css/combat.css" />
@@ -48,6 +50,7 @@ if(isset($_GET['logout'])){
         <title>GOHO?</title>
       </head>
       <body>
+        <?php require 'site/formulaireModal.php'; ?>
         <div id="body" class="container">
           <div class="row justify-content-between">
             <div class="offset-2">
@@ -61,9 +64,6 @@ if(isset($_GET['logout'])){
               }else if(!isset($_GET['page'])){
                 require 'site/navbar.php';
                 // mp3('musicAccueil','thème_accueil.mp3');
-              }
-              if(isset($_GET['page'])){
-                require 'site/formulaireModal.php';
               }
               ?>
             </div>
@@ -144,6 +144,11 @@ if(isset($_GET['logout'])){
         <script>
           lieu0.onclick = function(){ window.location = '/?page=lieu-0'}
         </script>
-
+        <!-- affichage d'image apres un moment -->
+        <script>
+          $( function(){
+            $( ".whoTalk" ).delay(5000).fadeIn( 1000 );
+          });
+        </script>
       </body>
       </html>

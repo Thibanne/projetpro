@@ -1,6 +1,8 @@
 body {
   background-color: #6f5f37;
   background-image: url('../img/combat.gif');
+}
+#pageJdC {
   margin-left: 5rem;
-  padding-right: 10rem;
+  padding-right: 6rem;
 }
