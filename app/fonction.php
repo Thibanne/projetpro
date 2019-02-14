@@ -67,13 +67,29 @@ function monsterPVPercent(){
   return (($_SESSION['monstre']['PV']/$_SESSION['basePVmonstre'])*100);
 }
 
-function modeleFound($appDir){
-  return ((strpos($appDir, 'modele') !== false));
-}
-function autoRequireModele(){
-  $appDir = array_slice(scandir('app'), 2);
-  $modelesFiles = array_filter($appDir, 'modeleFound');
-  return $modelesFiles;
+// Class pour selectioné des fichiers selon la recherche
+class AutoSearchFile {
+  // je vérouille des variables
+  private $strSearch;
+  private $directory;
+
+  // je parametre les arguments d'objet
+  function __construct($directory, $strSearch) {
+    $this->directory = $directory;
+    $this->strSearch = $strSearch;
+  }
+  //
+  public function searchDirFiles(){
+    // liste les élément présent dans le dossier en excluant les 2 premiers éléments (. et ..)
+    $dirContent = array_slice(scandir($this->directory), 2);
+    // copie le tableau avec uniquement les valeurs désiré
+    $dirFiles = array_filter($dirContent,  function($v) {
+                  // on filtre les valeurs du tableau,
+                  return ((strpos($v, $this->strSearch) !== false));
+                  // fait passer la valeur comme argument
+                }, ARRAY_FILTER_USE_BOTH);
+    return $dirFiles;
+  }
 }
 
 function findGetPage($tableStrPage){

@@ -1,4 +1,3 @@
-<script>
 // info mise a jour en permance
 var mapW;
 var mapH;
@@ -161,4 +160,3 @@ $( function() {
     }
   })
 } );
-</script>

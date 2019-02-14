@@ -1,4 +1,3 @@
-<script>
 $.fn.machineEcrire = function(option) {
 
   // on prépare le plugin
@@ -31,4 +30,3 @@ $.fn.machineEcrire = function(option) {
 }
 $(".lieu").fadeIn();
 $("#ecrire p").machineEcrire({ 'delai' : 20 });
-</script>

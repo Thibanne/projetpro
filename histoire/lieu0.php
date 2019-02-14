@@ -7,22 +7,12 @@
   <div class="">
     <img class="whoTalk" src="../assets/img/Lynel.png" alt="Lynel">
   </div>
-  <div class="col-8">
+  <div class="col-lg-8 col-md-8 col-sm-10 col-xl-10">
     <div id="ecrire" class="lieu">
       <p><?= $lieu0 ?></p>
     </div>
     <div class="offset-5">
-      <a id="btnStory" class="btn btnStory" href="/?page=couverture">Suite</a>
+      <a id="btnNext" class="btn btnStory" href="/?page=histoire&l1">Suite</a>
     </div>
-    <script>
-    var maxLenghText = ecrire.innerHTML.length;
-    window.onload = function (){
-        setInterval(function(){
-          if(maxLenghText-4<ecrire.innerHTML.length){
-            btnStory.style.display='inline';
-          }
-        }, 300);
-    }
-    </script>
   </div>
 </div>

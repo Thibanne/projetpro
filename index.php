@@ -2,7 +2,10 @@
 // Avec session_start() je récupère les données enregistré dans une valeur ID unique, ou j'en génère une vide
 require 'config.php';
 require 'app/fonction.php';
-$modelesFiles = autoRequireModele();
+// $modelesFiles = autoRequireModele();
+
+$Autoload = new AutoSearchFile('app', 'modele');
+$modelesFiles = $Autoload->searchDirFiles();
 foreach ($modelesFiles as $key => $value) {
   require 'app/'.$value;
 }
@@ -20,9 +23,9 @@ if(isset($_GET['logout'])){
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous" />
-  <link rel="stylesheet" href="assets/css/jquery-ui" />
-  <link rel="stylesheet" href="assets/css/jquery-ui-structure" />
-  <link rel="stylesheet" href="assets/css/jquery-ui-theme" />
+  <link rel="stylesheet" href="/assets/css/jquery-ui.css" />
+  <link rel="stylesheet" href="/assets/css/jquery-ui.structure.css" />
+  <link rel="stylesheet" href="/assets/css/jquery-ui.theme.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <?php
   if(isset($_GET['page'])){
@@ -122,33 +125,58 @@ if(isset($_GET['logout'])){
         // }
         </script>
         <!-- effet machine à ecrire -->
-        <?php require 'assets/js/machineEcrire.js'; ?>
         <!-- modals -->
-        <?php require 'assets/js/victoryModal.js'; ?>
-        <?php require 'assets/js/connectModal.js'; ?>
-        <!-- barre de vie et mana + animation -->
-        <?php require 'assets/js/health-manaBar.js'; ?>
+        <?php if (isset($_GET['modal'])){ ?>
+          <script src="assets/js/connectModal.js"></script>
+        <?php }
+        // barre de vie et mana + animation
+        if($_GET['page'] == 'combat'){
+          require 'assets/js/health-manaBar.js';
+        ?> <script src="assets/js/victoryModal.js"></script>
+        <?php } ?>
         <!-- déplacement de carte + zoom -->
-        <?php require 'assets/js/worldmap.js'; ?>
-        <!-- remplacement d'image basse par haute qualité -->
-        <script>
-        $( function(){
-          $("#worldmap-img").append('<img id="worldmap2" src="../assets/img/worldmap.png">')
-          worldmap2.onload = function(){
-            $("#worldmap-img").attr({src: "../assets/img/worldmap.png", alt: "map en haute qualité"});
-            $("#worldmap2").remove();
-          };
-        });
-        </script>
-        <!-- activation des évènement des lieux sur la worldmap -->
-        <script>
-          lieu0.onclick = function(){ window.location = '/?page=lieu-0'}
-        </script>
-        <!-- affichage d'image apres un moment -->
-        <script>
+        <?php if($_GET['page'] == 'histoire'){ ?>
+          <script src="assets/js/worldmap.js"></script>
+          <!-- remplacement d'image basse par haute qualité -->
+          <script>
           $( function(){
-            $( ".whoTalk" ).delay(5000).fadeIn( 1000 );
+            $("#worldmap-img").append('<img id="worldmap2" src="../assets/img/worldmap.png">')
+            worldmap2.onload = function(){
+              $("#worldmap-img").attr({src: "../assets/img/worldmap.png", alt: "map en haute qualité"});
+              $("#worldmap2").remove();
+            };
           });
-        </script>
+          </script>
+          <script>lieu0.onclick = function(){ window.location = '/?page=lieu-0'}</script>
+        <?php } ?>
+        <!-- changement de zone -->
+        <?php if($_GET['page'] == 'l1'){ ?>
+          <script>
+            $("#lieu0").css("display", "none");
+            $("#lieu1").css("display", "block");
+          </script>
+        <?php } ?>
+        <!-- activation des évènement des lieux sur la worldmap -->
+        <?php if($_GET['page'] == 'lieu-0'){ ?>
+          <script>
+          var maxLenghText = ecrire.innerHTML.length;
+          console.log(maxLenghText);
+          $( function(){
+            setInterval(function(){
+              console.log($("#ecrire").html().length);
+              if(maxLenghText < $("#ecrire").html().length){
+                $("#btnNext").fadeIn( 1000 );
+              }
+            }, 300);
+          })
+          </script>
+          <!-- affichage d'image apres un moment -->
+          <script>
+            $( function(){
+              $( ".whoTalk" ).delay(5000).fadeIn( 1000 );
+            });
+          </script>
+          <script src="assets/js/machineEcrire.js"></script>
+        <?php } ?>
       </body>
       </html>

@@ -144,6 +144,9 @@ table.tableTechProfilAssoc {
   overflow-y: auto;
   display: none;
 }
+.lieu p{
+  margin: 0;
+}
 .btnStory{
   margin: 0;
   color: white;
@@ -161,12 +164,21 @@ table.tableTechProfilAssoc {
   color: white;
   text-decoration: none;
 }
-.lieu p{
-  margin: 0;
-}
 .whoTalk {
   display: none;
   position: absolute;
   top: 10%;
   left: 75%;
+}
+@media (max-width: 767.98px) {
+  .whoTalk {
+    top: 0;
+    left: 60%;
+  }
+}
+@media (max-width: 575.98px) {
+  .whoTalk {
+    top: 0;
+    left: 50%;
+  }
 }
