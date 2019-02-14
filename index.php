@@ -150,7 +150,7 @@ if(isset($_GET['logout'])){
           <script>lieu0.onclick = function(){ window.location = '/?page=lieu-0'}</script>
         <?php } ?>
         <!-- changement de zone -->
-        <?php if($_GET['page'] == 'l1'){ ?>
+        <?php if($_GET['page'] == 'histoire&l1'){ ?>
           <script>
             $("#lieu0").css("display", "none");
             $("#lieu1").css("display", "block");

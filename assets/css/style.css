@@ -147,6 +147,11 @@ table.tableTechProfilAssoc {
 .lieu p{
   margin: 0;
 }
+@media (min-width: 1300px){
+  .lieu p{
+    font-size: 2vw;
+  }
+}
 .btnStory{
   margin: 0;
   color: white;
