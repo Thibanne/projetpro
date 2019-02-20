@@ -1,4 +1,4 @@
-<?php
+<?php 
 $connect = con();
 // Monstre
 if(isset($_POST['del'])) {
@@ -8,6 +8,7 @@ if(isset($_POST['del'])) {
 ?>
 <div class="col align-self-center">
   <a href="/?page=creer-monstre" class="btn btn-secondary">Créer nouveau monstre</a>
+  <!-- <a href="/?page=creer-monstreFull" class="btn btn-secondary">Créer nouveau monstre de A à Z</a> -->
   <table class="table table-striped listTableBackground">
     <thead>
       <tr>

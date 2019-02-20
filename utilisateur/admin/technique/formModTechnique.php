@@ -14,7 +14,7 @@ if (isset($_POST['modTechnique'])) {
   $connect->close();
 }
 ?>
-<div class="container create-modForm">
+<div class="offset-2 create-modForm">
   <!-- formulaire de modification -->
   <form class="" action="" method="post">
     <div>
@@ -31,5 +31,5 @@ if (isset($_POST['modTechnique'])) {
     </div>
     <button class="btn btn-secondary" type="submit" name="modTechnique">Modifier</button>
   </form>
-  <a href="/?page=liste-technique" class="btn btn-secondary">Retour liste</a>
+  <a href="/?page=liste-technique&section=1" class="btn btn-secondary">Retour liste</a>
 </div>

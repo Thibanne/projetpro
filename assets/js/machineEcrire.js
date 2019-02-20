@@ -1,3 +1,9 @@
+// Vitesse de base du "delai"
+window.delaiEcrire=20;
+// Acceleration de la vitesse si un click est produit
+$("#ecrire").click(function(){
+  window.delaiEcrire=1;
+});
 $.fn.machineEcrire = function(option) {
 
   // on prépare le plugin
@@ -18,15 +24,15 @@ $.fn.machineEcrire = function(option) {
       // on répète la fonction après le delai
       setTimeout(function(){
         caract(element, text, content+next);
-      }, option['delai']);
+      }, window.delaiEcrire);
     }
   }
 
   // on configure l'élément par défaut
-  option = option || { 'delai': 50 };
+  // option = option || { 'delai': 50 };
   // on exécute pour la 1er fois la fonction
   caract(this, $(this).html(), '');
 
 }
 $(".lieu").fadeIn();
-$("#ecrire p").machineEcrire({ 'delai' : 20 });
+$("#ecrire p").machineEcrire();

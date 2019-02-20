@@ -37,7 +37,7 @@ if(isset($_GET['id'])){
   ?>
   <div class="TableTechCentralAlign">
     <a href="/?page=creer-statsTechnique&id=<?= $_GET['id'] ?>&nom=<?= $_GET['nom'] ?>" class="btn btn-secondary">Assigner stats</a>
-    <a href="/?page=liste-technique" class="btn btn-secondary">Retour liste</a>
+    <a href="/?page=liste-technique&section=1" class="btn btn-secondary">Retour liste</a>
     <table class="table listTableBackground tableTechProfilAssoc">
       <thead>
         <tr>

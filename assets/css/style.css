@@ -21,6 +21,7 @@ body {
 }
 pre {
   color: white;
+  background-color: #000D;
 }
 hr {
   height: unset;
@@ -28,6 +29,9 @@ hr {
 }
 a{
   outline: none;
+}
+.hidden{
+  display: none;
 }
 .table th, .table td {
   vertical-align: middle;
@@ -112,7 +116,6 @@ a{
   margin: 0;
 }
 .create-modForm{
-  margin-left: 15rem;
   margin-top: 2rem;
 }
 .TableTechCentralAlign{
@@ -147,9 +150,12 @@ table.tableTechProfilAssoc {
 .lieu p{
   margin: 0;
 }
-@media (min-width: 1300px){
+@media (min-width: 1799px){
+  .lieu{
+
+  }
   .lieu p{
-    font-size: 2vw;
+    font-size: 1.3vw;
   }
 }
 .btnStory{
@@ -186,4 +192,12 @@ table.tableTechProfilAssoc {
     top: 0;
     left: 50%;
   }
+}
+/* canvas {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display:block;
+  margin:0 auto;
 }

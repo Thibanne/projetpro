@@ -18,7 +18,7 @@ if (isset($_POST['createStatsMonstre'])) {
   $connect->close();
 }
 ?>
-<div class="container create-modForm">
+<div class="offset-2 create-modForm">
   <form class="" action="" method="post">
     <div class="">
       <label for="">Stats</label>

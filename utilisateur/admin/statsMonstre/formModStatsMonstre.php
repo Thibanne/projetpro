@@ -15,11 +15,11 @@ if (isset($_POST['modStatsMonstre'])) {
   header("Location:/?page=liste-monstreStats&id=$_GET[id]&nom=$_GET[nom]");
 }
 ?>
-<div class="container create-modForm">
+<div class="offset-2 create-modForm">
   <!-- formulaire de modification -->
   <form class="" action="" method="post">
     <div>
-      <label for="id"><strong></strong></label></br>
+      <label for="id"><strong><?= $_GET['stat'] ?></strong></label></br>
       <input type="hidden" id="id" name="id" value="<?= $_GET['id'] ?>" />
     </div>
     <div>

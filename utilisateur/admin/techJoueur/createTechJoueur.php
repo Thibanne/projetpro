@@ -23,7 +23,7 @@ if (isset($_POST['createTechJoueur'])) {
   $connect->close();
 }
 ?>
-<div class="container create-modForm">
+<div class="offset-2 create-modForm">
   <form class="" action="" method="post">
     <input type="hidden" name="id_techJoueur" value="<?= $_GET['id'] ?>">
     <div class="">

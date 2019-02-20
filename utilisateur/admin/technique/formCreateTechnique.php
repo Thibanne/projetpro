@@ -15,7 +15,7 @@ if (isset($_POST['createTechnique'])) {
 }
 ?>
 <!-- formulaire d'inscription -->
-<div class="container create-modForm">
+<div class="offset-2 create-modForm">
   <form class="" action="?page=creer-technique" method="post">
     <div>
       <label for="name"><strong>Nom : </strong></label></br>
@@ -27,5 +27,5 @@ if (isset($_POST['createTechnique'])) {
     </div>
     <button class="btn btn-secondary" type="submit" name="createTechnique">Créé</button>
   </form>
-  <a href="/?page=liste-technique" class="btn btn-secondary">Retour liste</a>
+  <a href="/?page=liste-technique&section=1" class="btn btn-secondary">Retour liste</a>
 </div>

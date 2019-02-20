@@ -15,7 +15,7 @@ if (isset($_POST['modStatsTechDegat'])) {
   header("Location:/?page=liste-techniqueStats&id=$_GET[id]&nom=$_GET[nom]");
 }
 ?>
-<div class="container create-modForm">
+<div class="offset-2 create-modForm">
   <!-- formulaire de modification -->
   <form class="" action="" method="post">
     <div>

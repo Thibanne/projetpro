@@ -18,7 +18,7 @@ if (isset($_POST['createTechMonstre'])) {
   $connect->close();
 }
 ?>
-<div class="container create-modForm">
+<div class="offset-2 create-modForm">
   <form class="" action="" method="post">
     <input type="hidden" name="id_techMonstre" value="<?= $_GET['id'] ?>">
     <div class="">
@@ -31,4 +31,5 @@ if (isset($_POST['createTechMonstre'])) {
     </div>
     <input class="btn btn-secondary" type="submit" id="bouton" name="createTechMonstre" value="Assigner" />
   </form>
+  <a href="/?page=liste-technique&section=1" class="btn btn-secondary">Retour liste</a>
 </div>

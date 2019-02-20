@@ -25,9 +25,9 @@ if(isset($_POST['del'])) {
           <th><?= $value['nomStats'] ?></th>
           <td><?= $value['valeurStatsMonstre'] ?></td>
           <th>
-            <a href="/?page=modify-statsMonstre&id=<?= $_GET['id'] ?>&nom=<?= $_GET['nom'] ?>&idRow=<?= $value['idStatsMonstre'] ?>" class="btn btn-secondary">Modifier</a>
+            <a href="/?page=modify-statsMonstre&id=<?= $_GET['id'] ?>&nom=<?= $_GET['nom'] ?>&idRow=<?= $value['idStatsMonstre'] ?>&stat=<?= $value['nomStats'] ?>" class="btn btn-secondary">Modifier</a>
             <form class="d-inline" action="" method="post">
-              <input type="hidden" name="id" value="<?= $value['id'] ?>">
+              <input type="hidden" name="id" value="<?= $value['idStatsMonstre'] ?>">
               <button class="btn btn-warning" type="submit" name="del">Supprimer</button>
             </form>
           </th>

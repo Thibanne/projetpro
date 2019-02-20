@@ -14,11 +14,11 @@ if (isset($_POST['modMonstre'])) {
   $connect->close();
 }
 ?>
-<div class="container create-modForm">
+<div class="offset-2 create-modForm">
   <!-- formulaire de modification -->
   <form class="" action="" method="post">
     <div>
-      <label for="id"><strong></strong></label></br>
+      <label for="id"><strong></strong></label><br />
       <input type="hidden" id="id" name="id" value="<?= $_GET['id'] ?>" />
     </div>
     <div>

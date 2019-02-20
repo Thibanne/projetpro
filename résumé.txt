@@ -1,7 +1,8 @@
-Le projet que je vous présente aujourd'hui, est un site ludique, qui permet à un ou plusieurs joueurs de participer à une aventure qui s'inscrit dans la lignée des jeux de rôle papier avec la faciliter de l'automatisation numérique.
-Ce site, "dont vous êtes le héros" est inspiré par la célèbre collection de livre-jeux du même nom.
+Le projet que je vous présente aujourd'hui, est un site ludique, qui permet à un ou plusieurs joueurs de participer à une aventure qui s'inscrit dans la lignée des jeux de rôles papier avec la faciliter de l'automatisation numérique.
+Ce site, "dont vous êtes le héros" est inspiré par la célèbre collection de livres-jeux du même nom.
 Le site se décompose en plusieurs parties:
-La première partie, est un espace utilisateur, qui permet de s'enregistrer, se connecter, modifier ses informations, et consulter la fiche de son personnage.
-La seconde partie, dédiée au jeu lui-même. L'utilisateur, via son personnage, entre en jeu, par une introduction textuelle, qui lui explique les objectifs de sa quête. le joueur aura le choix de suivre différents parcours, qui le mèneront, soit, directement à la suite de l'histoire, ou soit, a affronter un adversaire pour enfin y accéder.
-La troisième partie du site, est donc le systeme de combat lui-même. Le systeme de combat est un "tour par tour". Le joueur a une possibilité de choix de plusieurs attaques. Une fois celles-ci choisies, l'IA(Intelligence artificielle) effectue son action de réponse ce qui conclue le tour.
+la première partie, est un espace utilisateur, qui permet de s'enregistrer, se connecter, modifier ses informations, et consulter la fiche de son personnage.
+La seconde partie, dédiée au jeu lui-même. L'utilisateur, via son personnage, entre en jeu, par une introduction textuelle, qui lui explique les objectifs de sa quête. le joueur aura le choix de suivre différents parcours, qui le mèneront, soit, directement à la suite de l'histoire, ou soit, à affronter un adversaire pour enfin y accéder.
+La troisième partie du site, est donc le système de combat lui-même. Le système de combat est un "tour par tour". Le joueur a une possibilité de choix de plusieurs attaques.
+Une fois celles-ci choisies, l'IA(Intelligence artificielle) effectue son action de réponse ce qui conclut le tour.
 La partie se termine, soit, quand le joueur bat le BOSS final, soit, quand il est vaincu au combat ou a fait une erreur de parcours.

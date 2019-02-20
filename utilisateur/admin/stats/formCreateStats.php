@@ -6,7 +6,7 @@ if (isset($_POST['createStats'])) {
   }
   $sql = "INSERT INTO Stats
   (`Nom`)
-  VALUES ('$lastname');";
+  VALUES ('$Nom');";
   $result = $connect->query($sql);
   if ($result === false) {
     echo 'Erreur de sql: '. $connect->error;
@@ -15,11 +15,11 @@ if (isset($_POST['createStats'])) {
 }
 ?>
 <!-- formulaire d'inscription -->
-<div class="container create-modForm">
+<div class="offset-2 create-modForm">
   <form class="" action="?page=creer-stats" method="post">
     <div>
-      <label for="lastname"><strong>Nom : </strong></label></br>
-      <input type="text" id="lastname" name="lastname" value="" />
+      <label for="Nom"><strong>Nom : </strong></label></br>
+      <input type="text" id="Nom" name="Nom" value="" />
     </div>
     <button class="btn btn-secondary" type="submit" name="createStats">Créé</button>
   </form>

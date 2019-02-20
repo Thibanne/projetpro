@@ -20,8 +20,8 @@ if (isset($_POST['createMonster'])) {
 }
 ?>
 <!-- formulaire de création de monstre -->
-<div class="container create-modForm">
-  <form class="" action="" method="post">
+<div class="offset-2 create-modForm">
+  <form class="form-group" action="" method="post">
     <div>
       <label for="name"><strong>Nom : </strong></label></br>
       <input type="text" id="name" name="monsterName" value="" />

@@ -1,0 +1,59 @@
+*Spécification technique
+	
+	Basse de données
+	
+		Utilisateur
+			id
+			Nom: Nom réel de l'utilisateur
+			Prénom: Prénom réel de l'utilisateur
+			Pseudo: Nom choisi pour le personnage qu'incarne l'utilisateur
+			Mail: Permet de protéger les données et empêche le double compte
+			Motdepasse: Sécurise l’accès aux données de l'utilisateur
+			
+		Technique
+			id
+			Nom: Nom de la technique
+			Description: Information sur la technique avec ses valeurs
+			
+		Monstre
+			id
+			Nom: Nom du monstre
+			Description: Information sur le monstre en question
+			
+		Stats
+			id
+			Nom: Nom de la statistique
+			
+		CoutTechnique
+			id
+			Valeur: Valeur numérique du coût d'une technique
+			id_stats: Statistique affecté par la valeur
+			id_technique: Technique lié à ce coût
+			
+		DegatTechnique
+			id
+			Valeur: Valeur numérique des dégâts d'une technique
+			id_stats: Statistique affecté par la valeur
+			id_technique: Technique utilisant ce tableau
+			
+		StatsUtilisateur
+			id
+			Valeur: Valeur numérique de la statistique affecté à l'utilisateur
+			id_stats: Statistique affecté par la valeur
+			id_utilisateur: Utilisateur lié à cette table
+			
+		StatsMonstre
+			id
+			Valeur: Valeur numérique de la statistique affecté au monstre en question
+			id_stats: Statistique affecté par la valeur
+			id_monstre: Monstre lié à cette table
+			
+		TechniqueUtilisateur
+			id
+			id_utilisateur: Utilisateur lié à cette table
+			id_Technique: Technique utilisable par l'utilisateur
+			
+		TechniqueMonstre
+			id
+			id_monstre: Monstre lié à cette table
+			id_Technique: Technique utilisable par le monstre en question

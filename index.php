@@ -31,152 +31,171 @@ if(isset($_GET['logout'])){
   if(isset($_GET['page'])){
     $tableStrPage = ['creer', 'liste', 'modify', 'profil'];
     if(findGetPage($tableStrPage)){
-      ?><link rel="stylesheet" href="assets/css/BDD.css" /><?php }
-      if($_GET['page'] == 'histoire'){
-        ?><link rel="stylesheet" href="assets/css/histoire.css" /><?php }
-      if($_GET['page'] == 'lieu-0'){
-        ?><link rel="stylesheet" href="assets/css/lieu0.css" /><?php }
-      if($_GET['page'] == 'lieu-1'){
-        ?><link rel="stylesheet" href="assets/css/lieu1.css" /><?php }
-          if($_GET['page'] == 'combat'){
-            ?>
-            <link rel="stylesheet" href="assets/css/combat.css" />
-            <link rel="stylesheet" href="assets/css/stats.css" />
-            <link rel="stylesheet" href="assets/css/boutonDeCombat.css" />
-            <?php
-            if(isset($_GET['votre-ombre'])){
-              ?><link rel="stylesheet" href="assets/css/ombre.css" /><?php
-            }
-          }
+      ?><link rel="stylesheet" href="assets/css/BDD.css" /><?php
+    }
+    if($_GET['page'] == 'histoire'){
+      ?><link rel="stylesheet" href="assets/css/histoire.css" /><?php
+    }
+    if($_GET['page'] == 'lieu-0'){
+      ?><link rel="stylesheet" href="assets/css/lieu0.css" /><?php
+    }
+    if($_GET['page'] == 'lieu-1'){
+      ?><link rel="stylesheet" href="assets/css/lieu1.css" /><?php
+    }
+    if($_GET['page'] == 'combat'){
+      ?>
+      <link rel="stylesheet" href="assets/css/combat.css" />
+      <link rel="stylesheet" href="assets/css/stats.css" />
+      <link rel="stylesheet" href="assets/css/boutonDeCombat.css" />
+      <?php
+      if(isset($_GET['votre-ombre'])){
+        ?><link rel="stylesheet" href="assets/css/ombre.css" /><?php
+      }
+    }
+  }
+  ?>
+  <title>GOHO?</title>
+</head>
+<body>
+  <?php require 'site/formulaireModal.php'; ?>
+  <div id="body" class="container">
+    <div class="row justify-content-between">
+      <div class="offset-2">
+        <?php
+        if(isset($_GET['page'])
+        && $_GET['page'] != 'combat'
+        && $_GET['page'] != 'histoire'
+        && strpos($_GET['page'],'lieu-') === false){
+          require 'site/navbar.php';
+          // mp3('musicAccueil','thème_accueil.mp3');
+        }else if(!isset($_GET['page'])){
+          require 'site/navbar.php';
+          // mp3('musicAccueil','thème_accueil.mp3');
         }
         ?>
-        <title>GOHO?</title>
-      </head>
-      <body>
-        <?php require 'site/formulaireModal.php'; ?>
-        <div id="body" class="container">
-          <div class="row justify-content-between">
-            <div class="offset-2">
-              <?php
-              if(isset($_GET['page'])
-              && $_GET['page'] != 'combat'
-              && $_GET['page'] != 'histoire'
-              && strpos($_GET['page'],'lieu-') === false){
-                require 'site/navbar.php';
-                // mp3('musicAccueil','thème_accueil.mp3');
-              }else if(!isset($_GET['page'])){
-                require 'site/navbar.php';
-                // mp3('musicAccueil','thème_accueil.mp3');
-              }
-              ?>
-            </div>
-          </div>
-          <?php
-          if(isConnected()){
-            if(isset($_GET['page'])){
-              if($_GET['page'] == 'combat'){
-                require 'combat/combat.php';
-              // Histoire
-              }require 'site/page/pageHistoire.php';
-              // Joueur
-              //urlAdminJoueur
-              // Monstre
-              require 'site/page/pageMonstre.php';
-              // Role
-              //urlAdminRole
-              // Stats
-              require 'site/page/pageStats.php';
-              // StatsJoueur
-              require 'site/page/pageStatsJoueur.php';
-              // StatsMonstre
-              require 'site/page/pageStatsMonstre.php';
-              // StatsTechnique
-              require 'site/page/pageStatsTechnique.php';
-              // TechniqueJoueur
-              require 'site/page/pageTechniqueJoueur.php';
-              // TechniqueMonstre
-              require 'site/page/pageTechniqueMonstre.php';
-              // Technique
-              require 'site/page/pageTechnique.php';
-            }else{
-              require 'combat/liste_monstre.php';
-              resetJoueur();
-            }
-          }else{
-            ?>
-            <div class="row justify-content-center">
-              <div class="col-8">
-                <p> Pas connecté </p>
-              </div>
-            </div>
-            <?php
-          }
-          ?>
-        </div>
-        <script src="assets/js/jquery-3.3.1.js"></script>
-        <script src="assets/js/jquery-ui.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        <script src="assets/js/fonction.js"></script>
-        <!-- musique -->
-        <script>
-        // if(isConnected()){
-        //   musicAccueil.currentTime="12"
-        // }
-        </script>
-        <!-- effet machine à ecrire -->
-        <!-- modals -->
-        <?php if (isset($_GET['modal'])){ ?>
-          <script src="assets/js/connectModal.js"></script>
-        <?php }
-        // barre de vie et mana + animation
+      </div>
+    </div>
+    <?php
+    if(isConnected()){
+      if(isset($_GET['page'])){
         if($_GET['page'] == 'combat'){
-          require 'assets/js/health-manaBar.js';
-        ?> <script src="assets/js/victoryModal.js"></script>
-        <?php } ?>
-        <!-- déplacement de carte + zoom -->
-        <?php if($_GET['page'] == 'histoire'){ ?>
-          <script src="assets/js/worldmap.js"></script>
-          <!-- remplacement d'image basse par haute qualité -->
-          <script>
-          $( function(){
-            $("#worldmap-img").append('<img id="worldmap2" src="../assets/img/worldmap.png">')
-            worldmap2.onload = function(){
-              $("#worldmap-img").attr({src: "../assets/img/worldmap.png", alt: "map en haute qualité"});
-              $("#worldmap2").remove();
-            };
-          });
-          </script>
-          <script>lieu0.onclick = function(){ window.location = '/?page=lieu-0'}</script>
-        <?php } ?>
-        <!-- changement de zone -->
-        <?php if($_GET['page'] == 'histoire&l1'){ ?>
-          <script>
-            $("#lieu0").css("display", "none");
-            $("#lieu1").css("display", "block");
-          </script>
-        <?php } ?>
-        <!-- activation des évènement des lieux sur la worldmap -->
-        <?php if($_GET['page'] == 'lieu-0'){ ?>
-          <script>
-          var maxLenghText = ecrire.innerHTML.length;
-          console.log(maxLenghText);
-          $( function(){
-            setInterval(function(){
-              console.log($("#ecrire").html().length);
-              if(maxLenghText < $("#ecrire").html().length){
-                $("#btnNext").fadeIn( 1000 );
-              }
-            }, 300);
-          })
-          </script>
-          <!-- affichage d'image apres un moment -->
-          <script>
-            $( function(){
-              $( ".whoTalk" ).delay(5000).fadeIn( 1000 );
-            });
-          </script>
-          <script src="assets/js/machineEcrire.js"></script>
-        <?php } ?>
-      </body>
-      </html>
+          require 'combat/combat.php';
+          // Histoire
+        }require 'site/page/pageHistoire.php';
+        // Joueur
+        //urlAdminJoueur
+        // Monstre
+        require 'site/page/pageMonstre.php';
+        // Role
+        //urlAdminRole
+        // Stats
+        require 'site/page/pageStats.php';
+        // StatsJoueur
+        require 'site/page/pageStatsJoueur.php';
+        // StatsMonstre
+        require 'site/page/pageStatsMonstre.php';
+        // StatsTechnique
+        require 'site/page/pageStatsTechnique.php';
+        // TechniqueJoueur
+        require 'site/page/pageTechniqueJoueur.php';
+        // TechniqueMonstre
+        require 'site/page/pageTechniqueMonstre.php';
+        // Technique
+        require 'site/page/pageTechnique.php';
+      }else{
+        require 'combat/liste_monstre.php';
+        resetJoueur();
+      }
+    }else{
+      ?>
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <?php require 'site/accueil.php'; ?>
+        </div>
+      </div>
+      <?php
+    }
+    ?>
+  </div>
+  <script src="assets/js/jquery-3.3.1.js"></script>
+  <script src="assets/js/jquery-ui.js"></script>
+  <script src="assets/js/notify.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="assets/js/fonction.js"></script>
+  <!-- musique -->
+  <script>
+  // if(isConnected()){
+  //   musicAccueil.currentTime="12"
+  // }
+  </script>
+  <!-- <script src="assets/js/effetpluie.js"></script> -->
+  <!-- modals -->
+  <?php if (isset($_GET['modal'])){ ?>
+    <script src="assets/js/connectModal.js"></script>
+  <?php }
+  // barre de vie et mana + animation
+  if(isset($_GET['page'])){
+    $tableStrPage = ['creer', 'liste', 'modify', 'profil'];
+    if(findGetPage($tableStrPage)){
+      require 'assets/js/notifCRUD.php';
+    }
+    if($_GET['page'] == 'combat'){
+      require 'assets/js/health-manaBar.js';
+      ?> <script src="assets/js/victoryModal.js"></script>
+    <?php }
+    if($_GET['page'] == 'creer-monstreFull'){
+      if(isset($_GET['id'])){ ?>
+        <script>
+          $("#createMonstreFullFormStep1").addClass('hidden');
+          $("#createMonstreFullFormStep2").removeClass('hidden');
+        </script>
+    <?php };
+     }
+    // déplacement de carte + zoom
+    if($_GET['page'] == 'histoire'){ ?>
+      <script src="assets/js/worldmap.js"></script>
+      <!-- remplacement d'image basse par haute qualité -->
+      <script>
+      $( function(){
+        $("#worldmap-img").append('<img id="worldmap2" src="../assets/img/worldmap.png">')
+        worldmap2.onload = function(){
+          $("#worldmap-img").attr({src: "../assets/img/worldmap.png", alt: "map en haute qualité"});
+          $("#worldmap2").remove();
+        };
+      });
+      </script>
+      <script>lieu0.onclick = function(){ window.location = '/?page=lieu-0'}</script>
+      <?php if($_GET['l'] == '1'){ ?>
+        <script>
+        $("#lieu0").css("display", "none");
+        $("#lieu1").css("display", "block");
+        </script>
+      <?php }
+    } ?>
+    <!-- changement de zone -->
+    <!-- activation des évènement des lieux sur la worldmap -->
+    <?php if($_GET['page'] == 'lieu-0'){ ?>
+      <script>
+      var maxLenghText = ecrire.innerHTML.length;
+      // console.log(maxLenghText);
+      $( function(){
+        setInterval(function(){
+          // console.log($("#ecrire").html().length);
+          // affichage d'image apres un certain nombre de mot
+          if($("#ecrire").html().length >= 270){
+            $( ".whoTalk" ).fadeIn(1000);
+          }
+          // affichage du bouton apres que le texte ai fini d'écrire
+          if(maxLenghText < $("#ecrire").html().length){
+            $("#btnNext").fadeIn(1000);
+          }
+        }, 300);
+      })
+      </script>
+      <!-- effet machine à ecrire -->
+      <script src="assets/js/machineEcrire.js"></script>
+    <?php }
+  } ?>
+</body>
+</html>

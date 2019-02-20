@@ -14,7 +14,7 @@ if (isset($_POST['modStatsTechCout'])) {
   $connect->close();
 }
 ?>
-<div class="container create-modForm">
+<div class="offset-2 create-modForm">
   <!-- formulaire de modification -->
   <form class="" action="" method="post">
     <div>
