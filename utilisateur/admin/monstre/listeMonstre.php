@@ -1,7 +1,10 @@
-<?php 
+<?php
+// connection à la base de donnée
 $connect = con();
 // Monstre
+// Si l'on appuie sur suppr
 if(isset($_POST['del'])) {
+  // on supprime le monstre selon la valeur de son 'id'
     $deletequery = "DELETE FROM `Monstre` WHERE `id` = $_POST[id]";
     $connect->query($deletequery);
 }

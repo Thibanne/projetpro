@@ -1,3 +1,4 @@
+-- FR --
 Le projet que je vous présente aujourd'hui, est un site ludique, qui permet à un ou plusieurs joueurs de participer à une aventure qui s'inscrit dans la lignée des jeux de rôles papier avec la faciliter de l'automatisation numérique.
 Ce site, "dont vous êtes le héros" est inspiré par la célèbre collection de livres-jeux du même nom.
 Le site se décompose en plusieurs parties:
@@ -6,3 +7,13 @@ La seconde partie, dédiée au jeu lui-même. L'utilisateur, via son personnage,
 La troisième partie du site, est donc le système de combat lui-même. Le système de combat est un "tour par tour". Le joueur a une possibilité de choix de plusieurs attaques.
 Une fois celles-ci choisies, l'IA(Intelligence artificielle) effectue son action de réponse ce qui conclut le tour.
 La partie se termine, soit, quand le joueur bat le BOSS final, soit, quand il est vaincu au combat ou a fait une erreur de parcours.
+
+-- ENG --
+The project that I am presenting to you today is a playful site, which allows one or more players to participate in an adventure that fit with paper role-playing games with the ease of digital facilities.
+This site, "where you are the hero"; is inspired by the famous collection of gamebooks of the name "Participative adventure books".
+The site is divided into several parts:
+the first part, is a user space, which allows you to register, connect, modify your information, and consult your character's sheet.
+The second part, dedicated to the game itself. The user, from his character, enters the game with a textual introduction, which explains the objectives of his quest. The player will have the choice of following different paths, which will lead him, either directly following the story, or to confront an opponent to finally access it.
+The third part of the site, therefore, is the combat system itself. The combat system is a "turn-by-turn" system. The player has a choice of several attacks.
+Once these are chosen, the AI (Artificial Intelligence) performs its response action, which concludes the round.
+The game ends either when the player beats the final BOSS or when he is defeated in combat or has made a course error.

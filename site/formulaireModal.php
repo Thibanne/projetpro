@@ -11,10 +11,10 @@
         <div class="row">
           <div class="col modalConnect">
           <?php
-            if(!isset($_POST['newOne']) || isset($_POST['oldOne'])){
-              require 'utilisateur/connectionForm.php';
-            }else if(isset($_POST['newOne'])){
+            if(isset($_POST['newOne']) || isset($_POST['inscription'])){
               require 'utilisateur/inscriptionForm.php';
+            }else if(!isset($_POST['newOne']) || isset($_POST['oldOne'])){
+              require 'utilisateur/connectionForm.php';
             }
             ?>
           </div>

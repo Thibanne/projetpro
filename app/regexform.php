@@ -14,22 +14,27 @@ if (isset($_POST['lastname'], $_POST['firstname'], $_POST['mail'], $_POST['mailR
     /* Vérifie si lastName est conforme à la regex, sinon affiche 'Mauvais caractère */
     if (!isNameValid($lastname)) {
       $errorLastname = 'Caractère non supporté';
+      $error = true;
     }
   } else { /* Sinon affiche 'le champ est vide */
     $errorLastname = 'le champ est vide';
+    $error = true;
   }
   if (!empty($firstname)) {
     if (!isNameValid($firstname)) {
       $errorFirstname = 'Caractère non supporté';
+      $error = true;
     }
   } else {
     $errorFirstname = 'le champ est vide';
+    $error = true;
   }
   if (!empty($mail)) {
     if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
 
       if (!($mail == $mailr)) {
         $errorpswd = 'les adresses mail ne correspondent pas';
+        $error = true;
       }
     } else {
       $errorMail = 'Adresse mail non conforme';
@@ -41,7 +46,11 @@ if (isset($_POST['lastname'], $_POST['firstname'], $_POST['mail'], $_POST['mailR
   }
   if (!empty($login)) {
     if (!isLoginValid($login)) {
-      $errorLogin = 'Le pseudo ne peut plus d\'un "." ou "/"';
+      $errorLogin = 'Le pseudo ne peut avoir plus d\'un "." ou "/"';
+      $error = true;
+    }else if(isLoginTaken() === true){
+      $errorLogin = 'Le pseudo '.$login.' est déja pris';
+      $error = true;
     }
   } else {
     $errorLogin = 'le champ est vide';
@@ -50,6 +59,7 @@ if (isset($_POST['lastname'], $_POST['firstname'], $_POST['mail'], $_POST['mailR
   if (!empty($pswd)) {
     if (!($pswd == $pswdr)) {
       $errorpswd = 'les mots de passe ne correspondent pas';
+      $error = true;
     }
   } else {
     $errorpswd = 'le champ est vide';

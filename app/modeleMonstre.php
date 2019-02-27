@@ -1,5 +1,6 @@
 <?php
 
+// simple fonction qui permet de récupéré toute les donné dans la table 'Monstre'
 function listeMonstre(){
   $connect = con();
   $sql = "SELECT * FROM `Monstre`";

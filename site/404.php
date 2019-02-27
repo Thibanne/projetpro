@@ -17,12 +17,12 @@
 <title>GOHO?</title>
 </head>
 <body>
-  <div id="back404" class="">    
+  <div id="back404" class="">
   <p id="nom" class="texte-font">
     <?php if (isConnected()){ ?>
       <a href="/"><?= $_SESSION['pseudo'] ?></a>
     <?php }else{ ?>
-      <a href="/">NoOne</a>
+      <a href="/">GOHO?</a>
     <?php } ?>
   </p>
   <p id="pnf" class="texte-font">Page not found</p>

@@ -34,11 +34,11 @@ if (isset($_POST['connection'])) {
   <div class="form-row">
     <div class="col">
       <label for="">Pseudo</label>
-      <input type="text" name="login" value="" />
+      <input type="text" name="login" value="" required />
     </div>
     <div class="col">
       <label for="">Mot de passe<?php if (isset($error['password'])) { ?> <span class="error"><?= $error['password']; ?></span><?php } ?></label>
-      <input type="text" name="password" value="" />
+      <input type="text" name="password" value="" required />
     </div>
   </div>
   <button class="btn btn-light btnResize" type="submit" name="connection">Connection</button>

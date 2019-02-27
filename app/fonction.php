@@ -24,12 +24,18 @@ function victoryModal($titre, $result){
 <?php
 }
 
+// fonction pour la connection à la base de Données
 function con(){
+  // je me connecte grâce aux informations envoyer via une requete 'mysqli_connect'
   $con = mysqli_connect("localhost","Thane","T&vl1Sic*rrqT!)MC^","jeuxnon");
+  // si une erreur apparait lors de la connection ...
   if (mysqli_connect_errno()){
+    // ... j'affiche l'erreur ...
    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+   // ... et je coupe le script
    exit;
   }
+  // J'associe à la connection la visibilité des accents
   $con->set_charset("utf8");
   return $con;
 }
@@ -44,15 +50,26 @@ function resetJoueur(){
 }
 
 function isNameValid($var) {
-    return preg_match('/^[a-zA-ZÂ-ÿ -]+$/i', $var);
+  return preg_match('/^[a-zA-ZÂ-ÿ -]+$/i', $var);
 }
 
 function isLoginValid($var) {
-    return preg_match('/^([a-zA-Z](?:(?:(?:\w[\.\_]?)*)\w)+)([a-zA-Z0-9])$/i', $var);
+  return preg_match('/^([a-zA-Z](?:(?:(?:\w[\.\_]?)*)\w)+)([a-zA-Z0-9])$/i', $var);
+}
+function isLoginTaken() {
+  $connect = con();
+  $sql = "SELECT `Pseudo` FROM `Utilisateur` WHERE `Pseudo` = '$login'";
+  $result = $connect->query($sql);
+  $loginTaken = $result->fetch_assoc(MYSQLI_ASSOC);
+  return $loginTaken;
 }
 
 function isConnected(){
   return !empty($_SESSION['pseudo']);
+}
+
+function isAdmin(){
+  return ($_SESSION['pseudo'] == 'sadmin');
 }
 
 function playerPVPercent(){

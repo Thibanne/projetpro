@@ -8,7 +8,8 @@
       <li class="nav-item active">
         <a class="nav-link" href="/">Accueil</a>
       </li>
-      <?php if(isConnected()){ ?>
+      <?php if(isConnected()){
+        if(isAdmin()){?>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Liste création
@@ -21,13 +22,14 @@
           <a class="dropdown-item" href="/?page=creer-techJoueur">technique pour un joueur</a>
         </div>
       </li>
+    <?php } ?>
       <li class="nav-item active">
         <a class="nav-link" href="/?page=histoire">Histoire</a>
       </li>
       <?php require 'utilisateur/logout.php'; ?>
       <?php }else{ ?>
         <li class="nav-item active">
-          <a class="btn btn-link nav-link" data-toggle="modal" data-target="#connectModal">Inscription/connection</a>        
+          <a class="btn btn-link nav-link" data-toggle="modal" data-target="#connectModal">Inscription/connection</a>
         </li>
       <?php } ?>
     </ul>

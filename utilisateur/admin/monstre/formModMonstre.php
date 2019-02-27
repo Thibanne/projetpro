@@ -1,16 +1,24 @@
 <?php
+// quand le formulaire envoi ses données
 if (isset($_POST['modMonstre'])) {
+  // connection à la base de donnée
   $connect = con();
+  // pour chaque donnée envoyer par le formulaire
   foreach ($_POST as $key => $value) {
+    // on les ajoute en tant que variable selon leur 'Nom'
     $$key = $connect->real_escape_string($value);
   }
+  // On modifie la valeur des champs en fonction de la variable généré précédement
   $sql = "UPDATE Monstre
   SET `Nom` = '$monsterName', `Description` = '$descMonster'
   WHERE `id` = $_GET[id]";
   $result = $connect->query($sql);
+  // si l'envoie a raté
   if ($result === false) {
+    // on affiche qu'une erreur est survenue
     echo 'Erreur de sql: '. $connect->error;
   }
+  // si l'envoie a reussi on coupe la connection à la BdD
   $connect->close();
 }
 ?>
