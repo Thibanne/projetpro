@@ -1,18 +1,22 @@
 <?php
 
+// Journal de combat
 function jdc($journaldecombat){
+  // enregistre toute les phrases sur 1 tour
   $_SESSION['journaldecombat'][$_SESSION['tour']-1][] = $journaldecombat;
 }
-
-function victoryModal($titre, $result){
-?>
+// modal victoire/defaite
+function victoryModal($titre, $result){ ?>
+<!-- création du modal -->
 <div id="victoryModal" class="modal show" tabindex="-1" role="dialog" aria-labelledby="victoryModal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
+        <!-- changement du titre selon la victoire/defaite -->
         <h5 class="modal-title"><?= $titre ?></h5>
       </div>
       <div class="modal-body">
+        <!-- changement du resultat en fonction de la victoire/defaite -->
         <p> <?= $_SESSION['avec'].' '.$result ?></p>
       </div>
       <div class="modal-footer">
@@ -40,6 +44,7 @@ function con(){
   return $con;
 }
 
+// reinitialisation des statistiques du joueur s'il n'est plus en combat
 function resetJoueur(){
   unset($_SESSION['battleIn']);
   $_SESSION['joueur'] = [
@@ -49,40 +54,69 @@ function resetJoueur(){
   ];
 }
 
+// // Debut des Regex //
+/*
+   ___                  
+  / _ \___ ___ ______ __
+ / , _/ -_) _ `/ -_) \ /
+/_/|_|\__/\_, /\__/_\_\ 
+         /___/
+*/
+// Verifie si le nom/prénom ne possede pas de caratère conforme
 function isNameValid($var) {
   return preg_match('/^[a-zA-ZÂ-ÿ -]+$/i', $var);
 }
-
+// de même pour les pseudos
 function isLoginValid($var) {
   return preg_match('/^([a-zA-Z](?:(?:(?:\w[\.\_]?)*)\w)+)([a-zA-Z0-9])$/i', $var);
 }
+// vérification s'il le pseudo n'est pas déja utilisé
 function isLoginTaken() {
+  global $login;
   $connect = con();
   $sql = "SELECT `Pseudo` FROM `Utilisateur` WHERE `Pseudo` = '$login'";
   $result = $connect->query($sql);
-  $loginTaken = $result->fetch_assoc(MYSQLI_ASSOC);
-  return $loginTaken;
+  if ($result->num_rows){
+    return true;
+  }
+  return false;
 }
+// // Fin des Regex //
 
+// vérifie si un utilisateur est bien connecté
 function isConnected(){
   return !empty($_SESSION['pseudo']);
 }
-
+// vérifié si l'utilisateur est un admin
 function isAdmin(){
   return ($_SESSION['pseudo'] == 'sadmin');
 }
 
+// // Bar de stat combat //
+/*
+ _______  _______  _______  ______   _______ _________
+(  ____ \(  ___  )(       )(  ___ \ (  ___  )\__   __/
+| (    \/| (   ) || () () || (   ) )| (   ) |   ) (   
+| |      | |   | || || || || (__/ / | (___) |   | |   
+| |      | |   | || |(_)| ||  __ (  |  ___  |   | |   
+| |      | |   | || |   | || (  \ \ | (   ) |   | |   
+| (____/\| (___) || )   ( || )___) )| )   ( |   | |   
+(_______/(_______)|/     \||/ \___/ |/     \|   )_(   
+                                                      
+*/
+// calcule les PV actuel du joueur en pourcentage
 function playerPVPercent(){
   return (($_SESSION['joueur']['PV']/$_SESSION['basePVjoueur'])*100);
 }
-
+// calcule la mana actuel du joueur en pourcentage
 function playerManaPercent(){
   return (($_SESSION['joueur']['mana']/$_SESSION['baseManajoueur'])*100);
 }
-
+// calcule les PV actuel du monstre en pourcentage
 function monsterPVPercent(){
   return (($_SESSION['monstre']['PV']/$_SESSION['basePVmonstre'])*100);
 }
+// // fin Bar de stat combat //
 
 // Class pour selectioné des fichiers selon la recherche
 class AutoSearchFile {
@@ -109,15 +143,20 @@ class AutoSearchFile {
   }
 }
 
+// cherche un mot dans l'url
 function findGetPage($tableStrPage){
+  // pour chaque mot recherché
   foreach ($tableStrPage as $key => $value) {
+    // s'il existe dans l'url
     if(strpos($_GET['page'], $value) !== false){
+      // on retourne vrai
       return true;
     }
   }
+  // si aucun mot n'a été trouvé retourne faux
   return false;
 }
-
+/*
 function mp3($id, $music){
   ?>
     <audio autoplay loop>
@@ -125,5 +164,5 @@ function mp3($id, $music){
     </audio>
   <?php
 }
-
+*/
 ?>

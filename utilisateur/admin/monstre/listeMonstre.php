@@ -26,15 +26,37 @@ if(isset($_POST['del'])) {
         <tr>
           <th><?= $value['id'] ?></th>
           <th><?= $value['Nom'] ?></th>
-          <td><?= $value['Description'] ?></td>
+          <td class="max-width-description">
+            <div>
+              <div style="min-width: 350px;">
+                <?= $value['Description'] ?>
+              </div>
+            </div>
+          </td>
           <th>
-            <a href="/?page=modify-monstre&id=<?= $value['id'] ?>" class="btn btn-secondary">Modifier</a>
-            <a href="/?page=liste-techMonstre&id=<?= $value['id'] ?>&nom=<?= $value['Nom'] ?>" class="btn btn-secondary">Technique</a>
-            <a href="/?page=liste-monstreStats&id=<?= $value['id'] ?>&nom=<?= $value['Nom'] ?>" class="btn btn-secondary">Stats</a>
-            <form class="d-inline" action="" method="post">
-              <input type="hidden" name="id" value="<?= $value['id'] ?>">
-              <button class="btn btn-warning" type="submit" name="del">Supprimer</button>
-            </form>
+            <div class="dropdown d-md-none">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Action
+              </button>
+              <div class="dropdown-menu background-dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="/?page=modify-monstre&id=<?= $value['id'] ?>">Modifier</a>
+                <a class="dropdown-item" href="/?page=liste-techMonstre&id=<?= $value['id'] ?>&nom=<?= $value['Nom'] ?>">Technique</a>
+                <a class="dropdown-item" href="/?page=liste-monstreStats&id=<?= $value['id'] ?>&nom=<?= $value['Nom'] ?>">Stats</a>
+                <form class="dropdown-item" action="" method="post">
+                  <input type="hidden" name="id" value="<?= $value['id'] ?>">
+                  <button class="btn btn-link textLikeLink" type="submit" name="del">Supprimer</button>
+                </form>
+              </div>
+            </div>
+            <div class="dropdown d-none d-md-block">
+              <a href="/?page=modify-monstre&id=<?= $value['id'] ?>" class="btn btn-secondary">Modifier</a>
+              <a href="/?page=liste-techMonstre&id=<?= $value['id'] ?>&nom=<?= $value['Nom'] ?>" class="btn btn-secondary">Technique</a>
+              <a href="/?page=liste-monstreStats&id=<?= $value['id'] ?>&nom=<?= $value['Nom'] ?>" class="btn btn-secondary">Stats</a>
+              <form class="d-inline" action="" method="post">
+                <input type="hidden" name="id" value="<?= $value['id'] ?>">
+                <button class="btn btn-warning" type="submit" name="del">X</button>
+              </form>
+            </div>
           </th>
         <?php } ?>
       </tr>

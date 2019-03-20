@@ -151,9 +151,6 @@ table.tableTechProfilAssoc {
   margin: 0;
 }
 @media (min-width: 1799px){
-  .lieu{
-
-  }
   .lieu p{
     font-size: 1.3vw;
   }
@@ -200,4 +197,30 @@ table.tableTechProfilAssoc {
   left: 0;
   display:block;
   margin:0 auto;
+} */
+@media (max-width: 1234px) {
+  .max-width-description {
+    width: 40vw;
+  }
+}
+@media (max-width: 1030px) {
+  .max-width-description {
+    width: 30vw;
+  }
+}
+@media (max-width: 846px) {
+  .max-width-description {    
+    width: unset;
+  }
+  .max-width-description > div {    
+    min-width: 300px;
+    overflow-x: scroll;
+  }
+}
+.background-dropdown-menu {
+  background-color: #545b62;
+}
+.background-dropdown-menu .dropdown-item, 
+.background-dropdown-menu .dropdown-item .btn-link{
+  color: white;
 }

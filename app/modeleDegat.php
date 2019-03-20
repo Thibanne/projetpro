@@ -1,5 +1,5 @@
 <?php
-
+// retourne un tableau de dégâts selon l'id et le nom de la technique demandé
 function techDegat($id, $nom=''){
   $connect = con();
   if ($nom == '') {

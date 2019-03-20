@@ -1,5 +1,6 @@
 <?php
-
+// fonction "technique du monstre"
+// selon l'id du monstre choisi, affiche un tableau retournant le nom avec ses valeurs de coût et dégât
 function techMonstre($id){
   $connect = con();
   $sql = "(SELECT 'Degat' AS action,

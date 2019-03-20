@@ -23,18 +23,32 @@ if(isset($_POST['del'])) {
           <th><?= $value['id'] ?></th>
           <th><?= $value['Nom'] ?></th>
           <?php if($value['Nom'] == 'PV'){ ?>
-            <td>Valeur des <strong>P</strong>oint de <strong>V</strong>ie</td>
+            <td class="max-width-description">Valeur des <strong>P</strong>oint de <strong>V</strong>ie</td>
           <?php }else if($value['Nom'] == 'mana'){ ?>
-            <td>Valeur des point de <strong>mana</strong> pour les pouvoirs</td>
+            <td class="max-width-description">Valeur des point de <strong>mana</strong> pour les pouvoirs</td>
           <?php }else if($value['Nom'] == 'stun'){ ?>
-            <td>Valeur du temps sans pouvoir agir</td>
+            <td class="max-width-description">Valeur du temps sans pouvoir agir</td>
           <?php } ?>
           <th>
-            <a href="/?page=modify-stats&id=<?= $value['id'] ?>" class="btn btn-secondary">Modifier</a>
-            <form class="d-inline" action="" method="post">
-              <input type="hidden" name="id" value="<?= $value['id'] ?>">
-              <button class="btn btn-warning" type="submit" name="del">Supprimer</button>
-            </form>
+            <div class="dropdown d-md-none">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Action
+              </button>
+              <div class="dropdown-menu background-dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="/?page=modify-stats&id=<?= $value['id'] ?>">Modifier</a>
+                <form class="dropdown-item" action="" method="post">
+                  <input type="hidden" name="id" value="<?= $value['id'] ?>">
+                  <button class="btn btn-link textLikeLink" type="submit" name="del">Supprimer</button>
+              </form>
+              </div>
+            </div>
+            <div class="dropdown d-none d-md-block">
+              <a href="/?page=modify-stats&id=<?= $value['id'] ?>" class="btn btn-secondary">Modifier</a>
+              <form class="d-inline" action="" method="post">
+                <input type="hidden" name="id" value="<?= $value['id'] ?>">
+                <button class="btn btn-warning" type="submit" name="del">Supprimer</button>
+              </form>
+            </div>
           </th>
         <?php } ?>
       </tr>

@@ -1,9 +1,11 @@
 <script>
+// Variable de la marge droite(mr) de la barre
+var mr = 47;
 <?php
 if(isset($_SESSION['battleIn'])){
   if($_SESSION['tour'] == 0){ ?>
     $('.skillbar').each(function(){
-      var result = reducteurPX(this, 54, $(this).attr('data-percent'));
+      var result = reducteurPX(this, mr, $(this).attr('data-percent'));
 
       $(this).find('.skillbar-bar').animate({
         // je lui donne le resultat pour l'animation
@@ -16,10 +18,10 @@ if(isset($_SESSION['battleIn'])){
     $_SESSION['tempPVMonstre'] = monsterPVPercent();
   }else{ ?>
     $('.skillbar').each(function(){
-      var ancienPVJoueur = reducteurPX(this, 54, "<?= $_SESSION['tempPVJoueur'] ?>%");
-      var ancienManaJoueur = reducteurPX(this, 54, "<?= $_SESSION['tempMana'] ?>%");
-      var ancienPVMonstre = reducteurPX(this, 54, "<?= $_SESSION['tempPVMonstre'] ?>%");
-      var resultActuel = reducteurPX(this, 54, $(this).attr('data-percent'));
+      var ancienPVJoueur = reducteurPX(this, mr, "<?= $_SESSION['tempPVJoueur'] ?>%");
+      var ancienManaJoueur = reducteurPX(this, mr, "<?= $_SESSION['tempMana'] ?>%");
+      var ancienPVMonstre = reducteurPX(this, mr, "<?= $_SESSION['tempPVMonstre'] ?>%");
+      var resultActuel = reducteurPX(this, mr, $(this).attr('data-percent'));
       $(this).find('.skillbar-playerPV').css("width", ancienPVJoueur)
       $(this).find('.skillbar-playerMana').css("width", ancienManaJoueur)
       $(this).find('.skillbar-monsterPV').css("width", ancienPVMonstre)

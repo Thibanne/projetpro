@@ -134,14 +134,14 @@ if(isset($_GET['logout'])){
   <?php if (isset($_GET['modal'])){ ?>
     <script src="assets/js/connectModal.js"></script>
   <?php }
-  // barre de vie et mana + animation
   if(isset($_GET['page'])){
     $tableStrPage = ['creer', 'liste', 'modify', 'profil'];
     if(findGetPage($tableStrPage)){
       require 'assets/js/notifCRUD.php';
     }
+    // barre de vie et mana + animation
     if($_GET['page'] == 'combat'){
-      require 'assets/js/health-manaBar.js';
+      require 'assets/js/health-manaBar.php';
       ?> <script src="assets/js/victoryModal.js"></script>
     <?php }
     if($_GET['page'] == 'creer-monstreFull'){

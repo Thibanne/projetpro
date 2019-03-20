@@ -25,7 +25,6 @@ if (isset($_POST['createTechJoueur'])) {
 ?>
 <div class="offset-2 create-modForm">
   <form class="" action="" method="post">
-    <input type="hidden" name="id_techJoueur" value="<?= $_GET['id'] ?>">
     <div class="">
       <label for="">Pseudo</label>
       <select class="btn btn-secondary" class="" name="joueur">

@@ -1,4 +1,5 @@
 <?php
+$error = false;
 /* on verifie les noms avec la regex */
 if (isset($_POST['lastname'], $_POST['firstname'], $_POST['mail'], $_POST['mailRepeat'], $_POST['login'], $_POST['password'], $_POST['passwordRepeat'])) {
   /* Déclaration des variables en méthode POST */
@@ -33,7 +34,7 @@ if (isset($_POST['lastname'], $_POST['firstname'], $_POST['mail'], $_POST['mailR
     if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
 
       if (!($mail == $mailr)) {
-        $errorpswd = 'les adresses mail ne correspondent pas';
+        $errorMail = 'les adresses mail ne correspondent pas';
         $error = true;
       }
     } else {
@@ -59,6 +60,14 @@ if (isset($_POST['lastname'], $_POST['firstname'], $_POST['mail'], $_POST['mailR
   if (!empty($pswd)) {
     if (!($pswd == $pswdr)) {
       $errorpswd = 'les mots de passe ne correspondent pas';
+      $error = true;
+    }
+    if (strlen($pswd) < 8) {
+      $errorpswd = 'le mot de passe est trop court, minimum 8 caractères';
+      $error = true;
+    }
+    if (strlen($pswd) > 16) {
+      $errorpswd = 'le mot de passe est trop long, maximum 16 caractères';
       $error = true;
     }
   } else {

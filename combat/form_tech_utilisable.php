@@ -5,7 +5,7 @@
 <form class="" action="" method="post">
   <?php
   foreach (techJoueur($_SESSION['id']) as $key => $tech) {
-    if(abs(techCout($tech['id'], 'mana')) <= $_SESSION['joueur']['mana']){
+    if(abs(techCout($tech['id'], 'mana')[0]['Valeur']) <= $_SESSION['joueur']['mana']){
       ?>
       <div class="skillButton">
         <input type="submit" name="skill" value="<?= $tech['Nom'] ?>" title="<?= $tech['Description'] ?>" />

@@ -1,5 +1,5 @@
 <?php
-
+// retourne un tableau de coût selon l'id et le nom de la technique demandé
 function techCout($id, $nom=''){
   $connect = con();
   if ($nom == '') {
